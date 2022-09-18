@@ -43,6 +43,16 @@
   <ItemGroup>
     <Compile Include="Connect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyBanLapTopDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBanLapTopDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UserDAO.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +60,24 @@
       <Project>{8725b557-1a18-435f-8f04-342bb1fe47cc}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="QuanLyBanLapTopDataSet.xsc">
+      <DependentUpon>QuanLyBanLapTopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBanLapTopDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyBanLapTopDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBanLapTopDataSet.xss">
+      <DependentUpon>QuanLyBanLapTopDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,3 +9,15 @@ E:\Workspace\C#\Login\Login\BUS\bin\Debug\DTO.dll
 E:\Workspace\C#\Login\Login\BUS\bin\Debug\DAO.pdb
 E:\Workspace\C#\Login\Login\BUS\bin\Debug\DTO.pdb
 E:\Workspace\C#\Login\Login\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\Workspace\C#\C_Sharp_BanLaptop\code\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\BUS.dll
+D:\Workspace\C#\C_Sharp_BanLaptop\code\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\BUS.pdb
+D:\Workspace\C#\C_Sharp_BanLaptop\code\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\DAO.dll
+D:\Workspace\C#\C_Sharp_BanLaptop\code\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\DTO.dll
+D:\Workspace\C#\C_Sharp_BanLaptop\code\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\DAO.pdb
+D:\Workspace\C#\C_Sharp_BanLaptop\code\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\DTO.pdb
+D:\Workspace\C#\C_Sharp_BanLaptop\code\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\Workspace\C#\C_Sharp_BanLaptop\code\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\Workspace\C#\C_Sharp_BanLaptop\code\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\Workspace\C#\C_Sharp_BanLaptop\code\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\obj\Debug\BUS.dll
+D:\Workspace\C#\C_Sharp_BanLaptop\code\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\obj\Debug\BUS.pdb
+D:\Workspace\C#\C_Sharp_BanLaptop\code\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\DAO.dll.config
