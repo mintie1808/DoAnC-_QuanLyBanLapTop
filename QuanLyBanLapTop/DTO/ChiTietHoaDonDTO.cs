@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class ChiTietHoaDonDTO
+    public class ChiTietHoaDonDTO
     {
         private int quantityProduct;
         private float unitPrice;

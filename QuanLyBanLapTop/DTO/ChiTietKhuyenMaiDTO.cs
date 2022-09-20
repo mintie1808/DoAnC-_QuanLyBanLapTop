@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class ChiTietKhuyenMaiDTO
+    public class ChiTietKhuyenMaiDTO
     {
         private float discount;
         private string status;
