@@ -45,6 +45,7 @@
     <Compile Include="HangSP.cs" />
     <Compile Include="PhieuYeuCauNhapHang.cs" />
     <Compile Include="QuyenDTO.cs" />
+    <Compile Include="test.cs" />
     <Compile Include="UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
