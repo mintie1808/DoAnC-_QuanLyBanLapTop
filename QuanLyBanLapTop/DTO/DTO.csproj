@@ -51,6 +51,7 @@
     <Compile Include="NhaCungCap.cs" />
     <Compile Include="PhieuNhapKho.cs" />
     <Compile Include="QuyenDTO.cs" />
+    <Compile Include="SanPham.cs" />
     <Compile Include="UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

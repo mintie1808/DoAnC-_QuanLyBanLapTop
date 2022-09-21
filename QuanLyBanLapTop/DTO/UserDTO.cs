@@ -11,8 +11,17 @@ namespace DTO
     {
         private string userName;
         private string password;
-        private string maTK;
+        private string id;
+        private int idQuyen;
 
+        public string Id { 
+            get { return id; }
+            set { id = value; }
+        }
+        public int IdQuyen { 
+            get { return idQuyen; }
+            set { idQuyen = value; }
+        }
         public string UserName
         {
             get { return userName; }
@@ -23,15 +32,17 @@ namespace DTO
             get { return password; }
             set { password = value; }
         }
-        public string MaTK
-        {
-            get { return maTK; }
-            set { maTK = value; }
-        }
         public UserDTO(string user, string pass)
         {
             this.userName = user;
             this.password = pass;
+        }
+        public UserDTO(string id,string user, string pass, int idQuyen)
+        {
+            this.userName = user;
+            this.password = pass;
+            this.id = id;
+            this.idQuyen = idQuyen;
         }
 
 
