@@ -12,9 +12,7 @@ namespace DTO
         private string namePromotion;
         private string status;
         private DateTime startDay;
-        private DateTime endDay;
-        private int idTypeProduct;
-
+        private DateTime endDay;  
         public int Id
         {
             get { return id; }
@@ -41,10 +39,6 @@ namespace DTO
             get { return endDay; }
             set { endDay = value; }
         }
-        public int IdTypeProduct
-        {
-            get { return idTypeProduct; }
-            set { idTypeProduct = value; }
-        }
+      
     }
 }
