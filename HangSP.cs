@@ -15,7 +15,7 @@ namespace DTO
         set { id = value;}
     }
 
-    public string nameManufacturer
+    public string NameManufacturer
     {
         get { return nameManufacturer; }
         set { nameManufacturer = value; }
