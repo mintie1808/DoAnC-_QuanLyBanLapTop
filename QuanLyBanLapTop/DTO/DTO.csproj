@@ -41,18 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="ChiTietHoaDonDTO.cs" />
     <Compile Include="ChiTietKhuyenMaiDTO.cs" />
     <Compile Include="ChiTietPhieuYcNhapHang.cs" />
     <Compile Include="HangSP.cs" />
     <Compile Include="KhuyenMaiDTO.cs" />
     <Compile Include="PhieuYeuCauNhapHang.cs" />
-=======
     <Compile Include="ChiTietNhapKho.cs" />
     <Compile Include="NhaCungCap.cs" />
     <Compile Include="PhieuNhapKho.cs" />
->>>>>>> MemberTruc
     <Compile Include="QuyenDTO.cs" />
     <Compile Include="UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
