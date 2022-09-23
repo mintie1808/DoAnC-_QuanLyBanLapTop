@@ -18,43 +18,44 @@ namespace DTO
         private int quantityBillPay;
 
 
-        public int idEmployee
+        public int IdEmployee
         {
             get { return idEmployee; }
             set { idEmployee = value; }
         }
 
-        public string nameEmployee
+        public string NameEmployee
         {
             get { return nameEmployee; }
             set { nameEmployee = value; }
         }
 
-        public string serviceEmployee
+        public string ServiceEmployee
         {
             get { return serviceEmployee; }
             set { serviceEmployee = value; }
         }
 
-        public DateTime birthday
+        public DateTime Birthday
         {
             get { return birthday; }
             set { birthday = value; }
         }
 
-        public string totalSales
+        public float TotalSales
         {
             get { return totalSales; }
             set { totalSales = value; }
         }
 
-        public float serviceEmployee
+        public string PhoneNumber
         {
-            get { return serviceEmployee; }
-            set { serviceEmployee = value; }
+            get { return phoneNumber; }
+            set { phoneNumber = value; }
         }
 
-        public int quantityBillPay
+
+        public int QuantityBillPay
         {
             get { return quantityBillPay; }
             set { quantityBillPay = value; }

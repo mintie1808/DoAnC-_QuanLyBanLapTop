@@ -29,8 +29,8 @@ namespace DAO
             command.Parameters.AddWithValue("@name", quyen.Name);
             command.Connection = conn.Conn;
             // tạo biến reader 
-            SqlDataReader reader = command.ExecuteReader();
-            reader.Close();
+            command.ExecuteReader();
+            
             conn.Conn.Close();  
             // xong giờ qua tạo biến proc là ok;
         }
@@ -49,8 +49,8 @@ namespace DAO
             command.Parameters.AddWithValue("@name", quyen.Name);
             command.Connection = conn.Conn;
             // tạo biến reader 
-            SqlDataReader reader = command.ExecuteReader();
-            reader.Close();
+            command.ExecuteReader();
+
             conn.Conn.Close();
             // xong giờ qua tạo biến proc là ok;
         }
@@ -68,8 +68,8 @@ namespace DAO
             command.Parameters.AddWithValue("@id", id);
             command.Connection = conn.Conn;
             // tạo biến reader 
-            SqlDataReader reader = command.ExecuteReader();
-            reader.Close();
+            command.ExecuteReader();
+            
             conn.Conn.Close();
             // xong giờ qua tạo biến proc là ok;
         }

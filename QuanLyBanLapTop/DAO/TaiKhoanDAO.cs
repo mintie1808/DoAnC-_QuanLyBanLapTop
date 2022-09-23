@@ -9,17 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 namespace DAO
 {
-    public class UserDAO
+    public class TaiKhoanDAO
     {
         public string searchUser(UserDTO us)
         {
-            // tạo quyền nè
-            // khùng quá :))
-            QuyenDAO quyenDAO = new QuyenDAO();
-            QuyenDTO quyen = new QuyenDTO(2, "testUpdate Quyen");
-            quyenDAO.deleteQuyen(1);
-            // rồi xong nó chạy khi mình bấm đăng nhập
-
             Connect connect = new Connect();
 
             connect.Conn.Open();

@@ -17,31 +17,31 @@ namespace DTO
 
 
 
-        public int idCustomer
+        public int IdCustomer
         {
             get { return idCustomer; }
             set { idCustomer = value; }
         }
 
-        public string nameCustomer
+        public string NameCustomer
         {
             get { return nameCustomer; }
             set { nameCustomer = value; }
         }
 
-        public string address
+        public string Address
         {
             get { return address; }
             set { address = value; }
         }
 
-        public string phoneNumber
+        public string PhoneNumber
         {
             get { return phoneNumber; }
             set { phoneNumber = value; }
         }
 
-        public string email
+        public string Email
         {
             get { return email; }
             set { email = value; }

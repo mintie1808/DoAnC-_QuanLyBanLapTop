@@ -6,25 +6,28 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public int id;
-    public string nameTypeProduct;
-    public int idManufacturer;
-
-    public int ID
+   public class DanhMucLapTop
     {
-        get { return id; }
-        set { id = value; }
-    }
+        private int id;
+        private string nameTypeProduct;
+        private int idManufacturer;
 
-    public string NameTypeProduct 
-    {
-        get { return nameTypeProduct; }
-        set { nameTypeProduct = value; }
-    }
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
-    public int Manufacturer
-    {
-        get { return manufacturer; }
-        set { manufacturer = value; }
+        public string NameTypeProduct
+        {
+            get { return nameTypeProduct; }
+            set { nameTypeProduct = value; }
+        }
+
+        public int IdManufacturer
+        {
+            get { return idManufacturer; }
+            set { idManufacturer = value; }
+        }
     }
 }

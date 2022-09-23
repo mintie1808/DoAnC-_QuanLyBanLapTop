@@ -9,7 +9,7 @@ namespace DTO
     public class ChiTietPhieuYcNhapHang
     {
         private string idProduct;
-        private int idSupplier;
+        private int idCoupon;
         private int quantityImport;
         private float unitPrice;
         private float intoMoney;
@@ -20,10 +20,10 @@ namespace DTO
             set { idProduct = value; }  // set method
         }
 
-        public int IdSupplier   // property
+        public int IdCoupon   // property
         {
-            get { return idSupplier; }   // get method
-            set { idSupplier = value; }  // set method
+            get { return idCoupon; }   // get method
+            set { idCoupon = value; }  // set method
         }
 
         public int QuantityImport   // property

@@ -24,37 +24,37 @@ namespace DTO
             set { id = value; }
         }
 
-        public DateTime dateBill
+        public DateTime DateBill
         {
             get { return dateBill; }
             set { dateBill = value; }
         }
 
-        public float sumPay
+        public float SumPay
         {
             get { return sumPay; }
             set { sumPay = value; }
         }
 
-        public string typePay
+        public string TypePay
         {
             get { return typePay; }
             set { typePay = value; }
         }
 
-        public float discountMoney
+        public float DiscountMoney
         {
             get { return discountMoney; }
             set { discountMoney = value; }
         }
 
-        public float pay
+        public float Pay
         {
             get { return pay; }
             set { pay = value; }
         }
 
-        public string status
+        public string Status
         {
             get { return status; }
             set { status = value; }
