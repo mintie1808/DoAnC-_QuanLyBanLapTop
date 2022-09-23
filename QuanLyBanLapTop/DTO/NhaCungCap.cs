@@ -23,5 +23,10 @@ namespace DTO
             get { return nameSupplier; }
             set { nameSupplier = value; }
         }
+        public NhaCungCap(string idSupplier, string nameSupplier)
+        {
+            this.idSupplier = idSupplier;
+            this.nameSupplier = nameSupplier;
+        }
     }
 }

@@ -51,6 +51,14 @@ namespace DTO
             set { idCoupon = value; }
         }
 
-
+        public ChiTietNhapKho(int idReceipt, int idCoupon, int quantityRequest, int quantityActual, float unitPrice, float intoMoney)
+        {
+            this.idReceipt = idReceipt;
+            this.idCoupon = idCoupon;
+            this.quantityRequest = quantityRequest;
+            this.quantityActual = quantityActual;
+            this.unitPrice = unitPrice;
+            this.intoMoney = intoMoney;
+        }
     }
 }
