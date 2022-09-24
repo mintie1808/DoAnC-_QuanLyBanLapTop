@@ -78,11 +78,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Tbl_ChiTietDanhMuc](
-	[idManufactory] [int] NOT NULL,
-	[idTypeProduct] [int] NOT NULL
-) ON [PRIMARY]
-GO
 /****** Object:  Table [dbo].[Tbl_ChiTietHoaDon]    Script Date: 9/16/2022 11:13:22 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -336,15 +331,6 @@ CREATE TABLE [dbo].[Tbl_TaiKhoan](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[Tbl_ChiTietDanhMuc]  WITH CHECK ADD  CONSTRAINT [FK_DanhMuc] FOREIGN KEY([idTypeProduct])
-REFERENCES [dbo].[Tbl_DanhMucLapTop] ([id])
-GO
-ALTER TABLE [dbo].[Tbl_ChiTietDanhMuc] CHECK CONSTRAINT [FK_DanhMuc]
-GO
-ALTER TABLE [dbo].[Tbl_ChiTietDanhMuc]  WITH CHECK ADD  CONSTRAINT [FK_Hang] FOREIGN KEY([idManufactory])
-REFERENCES [dbo].[Tbl_HangSP] ([id])
-GO
-ALTER TABLE [dbo].[Tbl_ChiTietDanhMuc] CHECK CONSTRAINT [FK_Hang]
 GO
 ALTER TABLE [dbo].[Tbl_ChiTietHoaDon]  WITH CHECK ADD  CONSTRAINT [fk_bill] FOREIGN KEY([idBill])
 REFERENCES [dbo].[Tbl_HoaDon] ([id])
@@ -478,13 +464,7 @@ INSERT INTO Tbl_DanhMucLapTop VALUES
 (5002, N'Ultrabook mỏng nhẹ', 4002),
 (5003, N'Laptop văn phòng', 4003)
 
----   3) Chi tiết danh mục   ---
-INSERT INTO Tbl_ChiTietDanhMuc VALUES
-(4001, 5001),
-(4001, 5001),
-(4002, 5002),
-(4003, 5003),
-(4003, 5003)
+
 
 ---	  4) Sản phẩm   ----
 INSERT INTO Tbl_SanPham VALUES
@@ -621,4 +601,14 @@ INSERT INTO Tbl_ChiTietNhapKho VALUES
 INSERT INTO Tbl_ChiTietPhieuYcNhapHang VALUES
 ('SP001', 6001, 1, 20000000, 20000000)
 
+alter table Tbl_ChiTietHoaDon
+add primary key (idProduct,idBill)
 
+alter table Tbl_ChiTietKhuyenMai
+add primary key (idProduct,idPromotion)
+
+alter table Tbl_ChiTietNhapKho
+add primary key (idReceipt,idCoupon)
+
+alter table Tbl_ChiTietPhieuYcNhapHang
+add primary key (idProduct,idCoupon)
