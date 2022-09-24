@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 
 namespace DTO 
 {
-    public int idManufactory;
-    public int idTypeProduct;
+    public class ChiTietDanhMuc {
+        private int idManufactory;
+        private int idTypeProduct;
 
-    public int idManufactory
-    {
-        get { return id; }
-        set { id =  value; }
-    }
+        public int IdManufactory
+        {
+            get { return idManufactory; }
+            set { idManufactory = value; }
+        }
 
-    public int idTypeProduct
-    {
-        get { return idTypeProduct; }
-        set { idTypeProduct = value; }
+        public int IdTypeProduct
+        {
+            get { return idTypeProduct; }
+            set { idTypeProduct = value; }
+        }
     }
 }

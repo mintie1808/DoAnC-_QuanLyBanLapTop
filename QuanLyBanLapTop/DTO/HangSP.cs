@@ -6,19 +6,23 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public int id;
-    public string nameManufacturer;
+    public class HangSP
+    {
+        private int id;
+        private string nameManufacturer;
 
-    public int ID
+    public int Id
     {
         get { return id; }
         set { id = value;}
     }
 
-    public string nameManufacturer
-    {
+    public string NameManufacturer
+        {
         get { return nameManufacturer; }
         set { nameManufacturer = value; }
     }
+    }
+     
 
 }

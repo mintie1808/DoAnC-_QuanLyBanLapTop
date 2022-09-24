@@ -9,14 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 namespace DAO
 {
-    public class UserDAO
+    public class TaiKhoanDAO
     {
         public string searchUser(UserDTO us)
         {
-           
             Connect connect = new Connect();
-            connect.Conn.Open();
 
+            connect.Conn.Open();
             SqlCommand sqlCommand = new SqlCommand("proc_login", connect.Conn);
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.Parameters.AddWithValue("@user", us.UserName);
@@ -34,6 +33,21 @@ namespace DAO
             reader.Close();
             connect.Conn.Close();
             return result;
+        }
+        public void addUser(UserDTO us)
+        {
+            Connect connect = new Connect();
+            connect.Conn.Open();
+            SqlCommand command = new SqlCommand("proc_addUser",connect.Conn);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@user", us.UserName);
+            command.Parameters.AddWithValue("@Pass", us.Password);
+            command.Parameters.AddWithValue("@id", us.Id);
+            command.Parameters.AddWithValue("@idQuyen", us.IdQuyen);
+            command.Connection = connect.Conn;
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Close();
+            connect.Conn.Close();
         }
     }
 }
