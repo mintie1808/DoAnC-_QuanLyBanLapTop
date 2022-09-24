@@ -21,9 +21,9 @@ namespace DAO
             //PhieuNhapKho phieu = (new PhieuNhapKho(3002, "Apple", new DateTime(2022, 12, 24), 99000000));
             //pnk.updateReceipt(phieu);
 
-            ChiTietNhapKhoDAO ctnk = new ChiTietNhapKhoDAO();
-            ChiTietNhapKho ct = (new ChiTietNhapKho(3002, 6002, 10, 20, 50000000, 200000000));
-            ctnk.updateDetailReceipt(ct);
+            //ChiTietNhapKhoDAO ctnk = new ChiTietNhapKhoDAO();
+            //ChiTietNhapKho ct = (new ChiTietNhapKho(3002, 6002, 10, 20, 50000000, 200000000));
+            //ctnk.updateDetailReceipt(ct);
 
             Connect connect = new Connect();
             connect.Conn.Open();
