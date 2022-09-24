@@ -1,0 +1,31 @@
+create proc		[dbo].[Proc_addCoupon]
+@idCoupon int,
+@dateAdded date,
+@intoMoney float
+as
+begin
+insert into Tbl_PhieuYeuCauNhapHang(idCoupon, dateAdded, intoMoney)
+values (@idCoupon, @dateAdded, @intoMoney)
+end
+
+create proc [dbo].[Proc_deleteCoupon]
+
+@idCoupon int
+as
+begin
+
+delete from Tbl_PhieuYeuCauNhapHang
+WHERE idCoupon = @idCoupon
+end
+
+create proc [dbo].[Proc_updateCoupon]
+@idCoupon int,
+@dateAdded date,
+@intoMoney float
+as
+begin
+
+UPDATE Tbl_PhieuYeuCauNhapHang
+SET dateAdded = @dateAdded,  intoMoney = @intoMoney
+WHERE idCoupon = @idCoupon
+end
