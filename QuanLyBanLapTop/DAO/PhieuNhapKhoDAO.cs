@@ -19,10 +19,10 @@ namespace DAO
             SqlCommand command = new SqlCommand("Proc_addReceipt", conn.Conn);
             // đặt tên biến
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@idReceipt", pnk.IdReceipt);
+            command.Parameters.AddWithValue("@id", pnk.Id);
             command.Parameters.AddWithValue("@idSupplier", pnk.IdSupplier);
-            command.Parameters.AddWithValue("@dateReceipt", pnk.DateReceipt);
-            command.Parameters.AddWithValue("@sumPay", pnk.SumPay);
+//             command.Parameters.AddWithValue("@dateReceipt", pnk.DateReceipt);
+//             command.Parameters.AddWithValue("@sumPay", pnk.SumPay);
             command.Connection = conn.Conn;
             // tạo biến reader
             SqlDataReader reader = command.ExecuteReader();
@@ -38,7 +38,7 @@ namespace DAO
             SqlCommand command = new SqlCommand("Proc_deleteReceipt", conn.Conn);
             // đặt tên biến
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@idReceipt", IdReceipt);
+            command.Parameters.AddWithValue("@id", Id;
             command.Connection = conn.Conn;
             // tạo biến reader
             SqlDataReader reader = command.ExecuteReader();
@@ -54,10 +54,10 @@ namespace DAO
             SqlCommand command = new SqlCommand("Proc_updateReceipt", conn.Conn);
             // đặt tên biến
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@idReceipt", pnk.IdReceipt);
+            command.Parameters.AddWithValue("@id", pnk.Id);
             command.Parameters.AddWithValue("@idSupplier", pnk.IdSupplier);
-            command.Parameters.AddWithValue("@dateReceipt", pnk.DateReceipt);
-            command.Parameters.AddWithValue("@sumPay", pnk.SumPay);
+//             command.Parameters.AddWithValue("@dateReceipt", pnk.DateReceipt);
+//             command.Parameters.AddWithValue("@sumPay", pnk.SumPay);
             command.Connection = conn.Conn;
             // tạo biến reader
             SqlDataReader reader = command.ExecuteReader();
