@@ -8,17 +8,24 @@ namespace DTO
 {
     public class PhieuNhapKho
     {
-        private int idReceipt;
+//         private int idReceipt;
+        private int id;
         private string idSupplier;
 //         private DateTime dateReceipt;
 //         private float sumPay;
 
-        public int IdReceipt
-        {
-            get { return idReceipt; }
-            set { idReceipt = value; }
-        }
+//         public int IdReceipt
+//         {
+//             get { return idReceipt; }
+//             set { idReceipt = value; }
+//         }
 
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        
         public string IdSupplier
         {
             get { return idSupplier; }
@@ -45,9 +52,9 @@ namespace DTO
 //             this.sumPay = sumPay;
 //         }
         
-        public PhieuNhapKho(int idReceipt, string idSupplier)
+        public PhieuNhapKho(int id, string idSupplier)
         {
-            this.idReceipt = idReceipt;
+            this.id = id;
             this.idSupplier = idSupplier;
         }
     }
