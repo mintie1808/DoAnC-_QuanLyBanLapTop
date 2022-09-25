@@ -5,11 +5,12 @@ create proc [dbo].[Proc_addProduct]
 @quantityProduct int,
 @statusProduct nvarchar(max),
 @idTypeProduct int,
-@idManufactutre int
+@idManufactutre int,
+@image nvarchar(50)
 as
 begin
-insert into Tbl_SanPham(idProduct, nameProduct,unitPrice,quantityProduct,statusProduct,idTypeProduct,idManufactutre)
-values (@idProduct, @nameProduct,@unitPrice,@quantityProduct,@statusProduct,@idTypeProduct,@idManufactutre)
+insert into Tbl_SanPham(idProduct, nameProduct,unitPrice,quantityProduct,statusProduct,idTypeProduct,idManufactutre, image)
+values (@idProduct, @nameProduct,@unitPrice,@quantityProduct,@statusProduct,@idTypeProduct,@idManufactutre, @image)
 end
 
 create proc [dbo].[Proc_deleteProduct]
@@ -28,11 +29,12 @@ create proc [dbo].[Proc_updateProduct]
 @quantityProduct int,
 @statusProduct nvarchar(max),
 @idTypeProduct int,
-@idManufactutre int
+@idManufactutre int,
+@image nvarchar(50)
 as
 begin
 
 UPDATE Tbl_SanPham
-SET nameProduct = @nameProduct, unitPrice = @unitPrice, quantityProduct = @quantityProduct, statusProduct = @statusProduct, idTypeProduct = @idTypeProduct, idManufactutre = @idManufactutre
+SET nameProduct = @nameProduct, unitPrice = @unitPrice, quantityProduct = @quantityProduct, statusProduct = @statusProduct, idTypeProduct = @idTypeProduct, idManufactutre = @idManufactutre, image = @image
 WHERE idProduct = @idProduct
 end

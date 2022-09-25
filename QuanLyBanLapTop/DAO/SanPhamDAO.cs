@@ -24,6 +24,8 @@ namespace DAO
             command.Parameters.AddWithValue("@statusProduct", sp.StatusProduct);
             command.Parameters.AddWithValue("@idTypeProduct", sp.IdTypeProduct);
             command.Parameters.AddWithValue("@idManufactutre", sp.IDManuFacture);
+            command.Parameters.AddWithValue("@image", sp.Image);
+
 
             command.ExecuteNonQuery();
 
@@ -42,6 +44,7 @@ namespace DAO
             command.Parameters.AddWithValue("@statusProduct", sp.StatusProduct);
             command.Parameters.AddWithValue("@idTypeProduct", sp.IdTypeProduct);
             command.Parameters.AddWithValue("@idManufactutre", sp.IDManuFacture);
+            command.Parameters.AddWithValue("@image", sp.Image);
 
             command.ExecuteNonQuery();
 

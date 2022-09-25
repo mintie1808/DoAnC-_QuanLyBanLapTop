@@ -1,11 +1,12 @@
 create proc		[dbo].[Proc_addCoupon]
 @idCoupon int,
 @dateAdded date,
-@intoMoney float
+@intoMoney float,
+@idSupplier nvarchar(50)
 as
 begin
-insert into Tbl_PhieuYeuCauNhapHang(idCoupon, dateAdded, intoMoney)
-values (@idCoupon, @dateAdded, @intoMoney)
+insert into Tbl_PhieuYeuCauNhapHang(idCoupon, dateAdded, intoMoney,idSupplier)
+values (@idCoupon, @dateAdded, @intoMoney, @idSupplier)
 end
 
 create proc [dbo].[Proc_deleteCoupon]
@@ -21,11 +22,12 @@ end
 create proc [dbo].[Proc_updateCoupon]
 @idCoupon int,
 @dateAdded date,
-@intoMoney float
+@intoMoney float,
+@idSupplier nvarchar(50)
 as
 begin
 
 UPDATE Tbl_PhieuYeuCauNhapHang
-SET dateAdded = @dateAdded,  intoMoney = @intoMoney
+SET dateAdded = @dateAdded,  intoMoney = @intoMoney, idSupplier = @idSupplier
 WHERE idCoupon = @idCoupon
 end

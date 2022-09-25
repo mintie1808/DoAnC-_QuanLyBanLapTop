@@ -17,9 +17,12 @@ namespace DAO
             conn.Conn.Open();
             SqlCommand command = new SqlCommand("Proc_addCoupon", conn.Conn);
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@idCoupon", p.Id);
+            command.Parameters.AddWithValue("@idCoupon", p.IdCoupon);
             command.Parameters.AddWithValue("@dateAdded", p.DateAdded);
             command.Parameters.AddWithValue("@intoMoney", p.IntoMoney);
+            command.Parameters.AddWithValue("@idSupplier", p.IdSupplier);
+
+
             command.ExecuteReader();
             conn.Conn.Close();  
 
@@ -29,9 +32,10 @@ namespace DAO
             conn.Conn.Open();
             SqlCommand command = new SqlCommand("Proc_updateCoupon", conn.Conn);
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@idCoupon", p.Id);
+            command.Parameters.AddWithValue("@idCoupon", p.IdCoupon);
             command.Parameters.AddWithValue("@dateAdded", p.DateAdded);
             command.Parameters.AddWithValue("@intoMoney", p.IntoMoney);
+            command.Parameters.AddWithValue("@idSupplier", p.IdSupplier);
             command.ExecuteReader();
             conn.Conn.Close();
         }
