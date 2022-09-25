@@ -52,3 +52,4 @@ E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\GUI\obj\Debug\GUI.csproj.
 E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\GUI\obj\Debug\GUI.csproj.CopyComplete
 E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\GUI\obj\Debug\GUI.exe
 E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\GUI\obj\Debug\GUI.pdb
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\GUI\obj\Debug\GUI.TrangChinh.resources

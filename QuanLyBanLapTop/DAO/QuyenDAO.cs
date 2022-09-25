@@ -25,8 +25,8 @@ namespace DAO
             //proc lát mình tạo trong sqlServer
             //đặt tên biến 
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@id", quyen.Id);
-            command.Parameters.AddWithValue("@name", quyen.Name);
+            command.Parameters.AddWithValue("@id", quyen.IdQuyen);
+            command.Parameters.AddWithValue("@name", quyen.NameAuth);
             command.Connection = conn.Conn;
             // tạo biến reader 
             command.ExecuteReader();
@@ -45,8 +45,8 @@ namespace DAO
             //proc lát mình tạo trong sqlServer
             //đặt tên biến 
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@id", quyen.Id);
-            command.Parameters.AddWithValue("@name", quyen.Name);
+            command.Parameters.AddWithValue("@id", quyen.IdQuyen);
+            command.Parameters.AddWithValue("@name", quyen.NameAuth);
             command.Connection = conn.Conn;
             // tạo biến reader 
             command.ExecuteReader();

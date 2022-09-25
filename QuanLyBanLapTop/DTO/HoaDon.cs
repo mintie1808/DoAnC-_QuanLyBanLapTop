@@ -9,19 +9,31 @@ namespace DTO
 {
     public class HoaDon
     {
-        private int id;
+        private int idBill;
         private DateTime dateBill;
         private float sumPay;
         private string typePay;
         private float discountMoney;
         private float pay;
         private string status;
+        private string idEmployee;
+        private string idCustomer;
 
 
-        public int idEmployee
+        public int IdBill
         {
-            get { return id; }
-            set { id = value; }
+            get { return idBill; }
+            set { idBill = value; }
+        }
+        public string IdEmployee { 
+            get { return idEmployee; }
+            set { idEmployee = value; }
+        }
+
+        public string IdCustomer
+        {
+            get { return idCustomer; }
+            set { idCustomer = value; }
         }
 
         public DateTime DateBill

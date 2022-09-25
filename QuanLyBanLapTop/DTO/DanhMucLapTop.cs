@@ -8,14 +8,13 @@ namespace DTO
 {
    public class DanhMucLapTop
     {
-        private int id;
+        private int idTypeProduct;
         private string nameTypeProduct;
-        private int idManufacturer;
 
-        public int ID
+        public int IdTypeProduct
         {
-            get { return id; }
-            set { id = value; }
+            get { return idTypeProduct; }
+            set { idTypeProduct = value; }
         }
 
         public string NameTypeProduct
@@ -24,10 +23,5 @@ namespace DTO
             set { nameTypeProduct = value; }
         }
 
-        public int IdManufacturer
-        {
-            get { return idManufacturer; }
-            set { idManufacturer = value; }
-        }
     }
 }

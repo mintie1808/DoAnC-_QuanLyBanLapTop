@@ -16,12 +16,24 @@ namespace DTO
         private string phoneNumber;
         private float totalSales;
         private int quantityBillPay;
+        private string idUser;
+        private float salaryEmployee;
 
 
         public int IdEmployee
         {
             get { return idEmployee; }
             set { idEmployee = value; }
+        }
+
+        public string IdUser{
+            get { return idUser; }
+            set { idUser = value; }
+        }
+        public float SalaryEmployee
+        {
+            get { return salaryEmployee; }
+            set { salaryEmployee = value; }
         }
 
         public string NameEmployee

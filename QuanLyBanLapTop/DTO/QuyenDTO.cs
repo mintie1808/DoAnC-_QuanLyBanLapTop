@@ -8,21 +8,23 @@ namespace DTO
 {
     public class QuyenDTO
     {
-        private int id;
-        private string name;
-        
-        public int Id { 
-            get { return id; }
-            set { id = value; }
+        private int idQuyen;
+        private string nameAuth;
+
+        public int IdQuyen
+        { 
+            get { return idQuyen; }
+            set { idQuyen = value; }
         }
-        public string Name { 
-            get { return name; }
-            set { name = value; }
+        public string NameAuth
+        { 
+            get { return nameAuth; }
+            set { nameAuth = value; }
         }
         public QuyenDTO(int id, string name)
         {
-            this.id = id;
-            this.name = name;
+            this.idQuyen = id;
+            this.nameAuth = name;
         }
     }
 }

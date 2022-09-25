@@ -8,13 +8,13 @@ namespace DTO
 {
     public class HangSP
     {
-        private int id;
+        private int idManufactutre;
         private string nameManufacturer;
 
-    public int Id
-    {
-        get { return id; }
-        set { id = value;}
+    public int IdManufactutre
+        {
+        get { return idManufactutre; }
+        set { idManufactutre = value;}
     }
 
     public string NameManufacturer
