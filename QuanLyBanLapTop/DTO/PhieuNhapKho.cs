@@ -10,8 +10,8 @@ namespace DTO
     {
         private int idReceipt;
         private string idSupplier;
-        private DateTime dateReceipt;
-        private float sumPay;
+//         private DateTime dateReceipt;
+//         private float sumPay;
 
         public int IdReceipt
         {
@@ -25,24 +25,30 @@ namespace DTO
             set { idSupplier = value; }
         }
 
-        public DateTime DateReceipt
-        {
-            get { return dateReceipt; }
-            set { dateReceipt = value; }
-        }
+//         public DateTime DateReceipt
+//         {
+//             get { return dateReceipt; }
+//             set { dateReceipt = value; }
+//         }
 
-        public float SumPay
-        {
-            get { return sumPay; }
-            set { sumPay = value; }
-        }
+//         public float SumPay
+//         {
+//             get { return sumPay; }
+//             set { sumPay = value; }
+//         }
 
-        public PhieuNhapKho(int idReceipt, string idSupplier, DateTime dateReceipt, float sumPay)
+//         public PhieuNhapKho(int idReceipt, string idSupplier, DateTime dateReceipt, float sumPay)
+//         {
+//             this.idReceipt = idReceipt;
+//             this.idSupplier = idSupplier;
+//             this.dateReceipt = dateReceipt;
+//             this.sumPay = sumPay;
+//         }
+        
+        public PhieuNhapKho(int idReceipt, string idSupplier)
         {
             this.idReceipt = idReceipt;
             this.idSupplier = idSupplier;
-            this.dateReceipt = dateReceipt;
-            this.sumPay = sumPay;
         }
     }
 }
