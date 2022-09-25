@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -32,7 +32,7 @@ namespace DAO
             conn.Conn.Close();
         }
 
-        public void deleteDetailReceipt(int IdReceipt)
+        public void deleteDetailReceipt(int IdReceipt, int IdCoupon)
         {
             // kết nối với connect
             conn.Conn.Open();
@@ -41,6 +41,7 @@ namespace DAO
             // đặt tên biến
             command.CommandType = System.Data.CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@idReceipt", IdReceipt);
+            command.Parameters.AddWithValue("@idCoupon", IdCoupon);
             command.Connection = conn.Conn;
             // tạo biến reader
             SqlDataReader reader = command.ExecuteReader();
