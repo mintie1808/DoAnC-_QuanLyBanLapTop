@@ -6,9 +6,25 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class QuyenDTO
+    public class QuyenDTO
     {
-        private string id { get; set; }
-        private string name { get; set; }
+        private int idQuyen;
+        private string nameAuth;
+
+        public int IdQuyen
+        { 
+            get { return idQuyen; }
+            set { idQuyen = value; }
+        }
+        public string NameAuth
+        { 
+            get { return nameAuth; }
+            set { nameAuth = value; }
+        }
+        public QuyenDTO(int id, string name)
+        {
+            this.idQuyen = id;
+            this.nameAuth = name;
+        }
     }
 }

@@ -8,17 +8,16 @@ namespace DTO
 {
     public class KhuyenMaiDTO
     {
-        private int id;
+        private int idPromotion;
         private string namePromotion;
         private string status;
         private DateTime startDay;
         private DateTime endDay;
-        private int idTypeProduct;
 
-        public int Id
+        public int IdPromotion
         {
-            get { return id; }
-            set { id = value; }
+            get { return idPromotion; }
+            set { idPromotion = value; }
         }
         public string NamePromotion
         {
@@ -40,11 +39,6 @@ namespace DTO
         {
             get { return endDay; }
             set { endDay = value; }
-        }
-        public int IdTypeProduct
-        {
-            get { return idTypeProduct; }
-            set { idTypeProduct = value; }
         }
     }
 }

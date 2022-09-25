@@ -1,0 +1,28 @@
+create proc [dbo].[Proc_addQuyen]
+@id int,
+@name nvarchar(50)
+as
+begin
+insert into Tbl_Quyen(idQuyen, nameAuth)
+values (@id, @name)
+end
+
+create proc [dbo].[Proc_deleteQuyen]
+@id int
+as
+begin
+
+delete from Tbl_Quyen
+WHERE idQuyen = @id
+end
+
+create proc [dbo].[Proc_updateQuyen]
+@id int,
+@name nvarchar(50)
+as
+begin
+
+UPDATE Tbl_Quyen
+SET nameAuth = @name
+WHERE idQuyen = @id
+end

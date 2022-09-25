@@ -1,0 +1,31 @@
+use QuanLyBanLapTop
+go
+ 
+create proc Proc_addTypeProduct
+@id int,
+@name nvarchar(50),
+@idManufacturer int
+as 
+begin
+	insert into [dbo].[Tbl_DanhMucLapTop] (id, namTypeProduct, idManufacturer)
+	values (@id, @name, @idManufacturer)
+end
+
+create proc [dbo].[Proc_updateTypeProduct]
+@id int,
+@name nvarchar(50),
+@idManufacturer int
+as
+begin
+	UPDATE Tbl_DanhMucLapTop
+	SET id=@id, namTypeProduct=@name, idManufacturer=@idManufacturer
+	WHERE id = @id
+end
+
+create proc [dbo].[Proc_deleteTypeProduct]
+@id int
+as
+begin
+	delete from Tbl_DanhMucLapTop
+WHERE id = @id
+end

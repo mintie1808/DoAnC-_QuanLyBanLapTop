@@ -49,5 +49,15 @@ namespace GUI
         {
 
         }
+
+        private void text_title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void text_user_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

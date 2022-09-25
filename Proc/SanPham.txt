@@ -1,0 +1,38 @@
+create proc [dbo].[Proc_addProduct]
+@idProduct nvarchar(50),
+@nameProduct nvarchar(max),
+@unitPrice float,
+@quantityProduct int,
+@statusProduct nvarchar(max),
+@idTypeProduct int,
+@idManufactutre int
+as
+begin
+insert into Tbl_SanPham(idProduct, nameProduct,unitPrice,quantityProduct,statusProduct,idTypeProduct,idManufactutre)
+values (@idProduct, @nameProduct,@unitPrice,@quantityProduct,@statusProduct,@idTypeProduct,@idManufactutre)
+end
+
+create proc [dbo].[Proc_deleteProduct]
+@idProduct nvarchar(50)
+as
+begin
+
+delete from Tbl_SanPham
+WHERE idProduct = @idProduct
+end
+
+create proc [dbo].[Proc_updateProduct]
+@idProduct nvarchar(50),
+@nameProduct nvarchar(max),
+@unitPrice float,
+@quantityProduct int,
+@statusProduct nvarchar(max),
+@idTypeProduct int,
+@idManufactutre int
+as
+begin
+
+UPDATE Tbl_SanPham
+SET nameProduct = @nameProduct, unitPrice = @unitPrice, quantityProduct = @quantityProduct, statusProduct = @statusProduct, idTypeProduct = @idTypeProduct, idManufactutre = @idManufactutre
+WHERE idProduct = @idProduct
+end

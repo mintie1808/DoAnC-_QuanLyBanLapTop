@@ -8,13 +8,28 @@ namespace DTO
 {
     public class PhieuNhapKho
     {
-        private int id;
+        private int idReceipt;
         private string idSupplier;
+        private DateTime dateReceipt;
+        private float sumPay;
 
-        public int Id
+
+        public int IdReceipt
         {
-            get { return id; }
-            set { id = value; }
+            get { return idReceipt; }
+            set { idReceipt = value; }
+        }
+
+        public DateTime DateReceipt
+        {
+            get { return dateReceipt; }
+            set { dateReceipt = value; }
+        }
+
+        public float SumPay
+        {
+            get { return sumPay; }
+            set { sumPay = value; }
         }
 
         public string IdSupplier

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,20 +8,21 @@ namespace DTO
 {
     public class HangSP
     {
-        private int id;
+        private int idManufactutre;
         private string nameManufacturer;
 
-        public int Id   // property
+    public int IdManufactutre
         {
-            get { return id; }   // get method
-            set { id = value; }  // set method
-        }
-
-        public string NameManufacturer   // property
-        {
-            get { return nameManufacturer; }   // get method
-            set { nameManufacturer = value; }  // set method
-        }
-
+        get { return idManufactutre; }
+        set { idManufactutre = value;}
     }
+
+    public string NameManufacturer
+        {
+        get { return nameManufacturer; }
+        set { nameManufacturer = value; }
+    }
+    }
+     
+
 }

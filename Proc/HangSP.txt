@@ -1,0 +1,26 @@
+create proc [dbo].[Proc_addManufacture]
+@id int,
+@name nvarchar(50)
+as
+begin
+insert into Tbl_HangSP(id, nameManufacturer)
+values (@id, @name)
+end
+
+create proc [dbo].[Proc_deleteManufacture]
+@id int
+as
+begin
+delete from Tbl_HangSP
+WHERE id = @id
+end
+
+create proc [dbo].[Proc_updateManufacture]
+@id int,
+@name nvarchar(50)
+as
+begin
+UPDATE Tbl_HangSP
+SET id=@id, nameManufacturer = @name
+WHERE id = @id
+end

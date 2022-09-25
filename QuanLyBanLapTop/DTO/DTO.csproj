@@ -51,7 +51,12 @@
     <Compile Include="NhaCungCap.cs" />
     <Compile Include="PhieuNhapKho.cs" />
     <Compile Include="QuyenDTO.cs" />
+    <Compile Include="SanPham.cs" />
     <Compile Include="UserDTO.cs" />
+    <Compile Include="DanhMucLapTop.cs" />
+    <Compile Include="HoaDon.cs" />
+    <Compile Include="KhachHang.cs" />
+    <Compile Include="NhanVien.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

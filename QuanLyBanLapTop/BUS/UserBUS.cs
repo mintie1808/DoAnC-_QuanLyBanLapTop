@@ -20,7 +20,7 @@ namespace BUS
                 return "requeid_user";
             if (pass == "")
                 return "requeid_pass";
-            UserDAO us = new UserDAO();
+            TaiKhoanDAO us = new TaiKhoanDAO();
             UserDTO userDTO = new UserDTO(userName, pass);
             string result = us.searchUser(userDTO);
 

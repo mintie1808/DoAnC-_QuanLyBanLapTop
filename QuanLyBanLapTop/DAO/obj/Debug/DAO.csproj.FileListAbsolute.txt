@@ -16,3 +16,12 @@ D:\c#\QuanLyBanLapTop\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 D:\c#\QuanLyBanLapTop\DAO\obj\Debug\DAO.csproj.CopyComplete
 D:\c#\QuanLyBanLapTop\DAO\obj\Debug\DAO.dll
 D:\c#\QuanLyBanLapTop\DAO\obj\Debug\DAO.pdb
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\DAO\bin\Debug\DAO.dll
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\DAO\bin\Debug\DAO.pdb
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\DAO\bin\Debug\DTO.dll
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\DAO\bin\Debug\DTO.pdb
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\DAO\obj\Debug\DAO.csproj.CopyComplete
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\DAO\obj\Debug\DAO.dll
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\DAO\obj\Debug\DAO.pdb

@@ -1,12 +1,6 @@
 ﻿
 /****** Object:  Database [QuanLyBanLapTop]    Script Date: 9/16/2022 11:13:20 PM ******/
 CREATE DATABASE [QuanLyBanLapTop]
-ALTER DATABASE [QuanLyBanLapTop] SET COMPATIBILITY_LEVEL = 150
-GO
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [QuanLyBanLapTop].[dbo].[sp_fulltext_database] @action = 'enable'
-end
 GO
 ALTER DATABASE [QuanLyBanLapTop] SET ANSI_NULL_DEFAULT OFF 
 GO
@@ -66,23 +60,13 @@ ALTER DATABASE [QuanLyBanLapTop] SET TARGET_RECOVERY_TIME = 60 SECONDS
 GO
 ALTER DATABASE [QuanLyBanLapTop] SET DELAYED_DURABILITY = DISABLED 
 GO
-ALTER DATABASE [QuanLyBanLapTop] SET ACCELERATED_DATABASE_RECOVERY = OFF  
-GO
+
 ALTER DATABASE [QuanLyBanLapTop] SET QUERY_STORE = OFF
 GO
 USE [QuanLyBanLapTop]
 GO
 
-/****** Object:  Table [dbo].[Tbl_ChiTietDanhMuc]    Script Date: 9/16/2022 11:13:21 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Tbl_ChiTietDanhMuc](
-	[idManufactory] [int] NOT NULL,
-	[idTypeProduct] [int] NOT NULL
-) ON [PRIMARY]
-GO
+
 /****** Object:  Table [dbo].[Tbl_ChiTietHoaDon]    Script Date: 9/16/2022 11:13:22 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -143,13 +127,12 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Tbl_DanhMucLapTop](
-	[id] [int] NOT NULL,
-	[namTypeProduct] [nvarchar](50) NULL,
-	[idManufacturer] [int] NOT NULL,
+	[idTypeProduct] [int] NOT NULL,
+	[nameTypeProduct] [nvarchar](50) NULL,
  CONSTRAINT [PK_Tbl_LoaiSP] PRIMARY KEY CLUSTERED 
 (
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	[idTypeProduct] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Tbl_HangSP]    Script Date: 9/16/2022 11:13:22 PM ******/
@@ -158,12 +141,12 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Tbl_HangSP](
-	[id] [int] NOT NULL,
-	[nameManufacturer] [nvarchar](max) NULL,
+	[idManufactutre] [int] NOT NULL,
+	[nameManufactutre] [nvarchar](max) NULL,
  CONSTRAINT [PK_Tbl_HangSP] PRIMARY KEY CLUSTERED 
 (
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	[idManufactutre] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Tbl_HoaDon]    Script Date: 9/16/2022 11:13:22 PM ******/
@@ -172,7 +155,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Tbl_HoaDon](
-	[id] [int] NOT NULL,
+	[idBill] [int] NOT NULL,
 	[dateBill] [date] NULL,
 	[sumPay] [float] NULL,
 	[typePay] [nvarchar](50) NULL,
@@ -183,8 +166,8 @@ CREATE TABLE [dbo].[Tbl_HoaDon](
 	[idCustomer] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_Tbl_Bill] PRIMARY KEY CLUSTERED 
 (
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	[idBill] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Tbl_KhachHang]    Script Date: 9/16/2022 11:13:22 PM ******/
@@ -201,7 +184,7 @@ CREATE TABLE [dbo].[Tbl_KhachHang](
  CONSTRAINT [PK_Tbl_KhachHang] PRIMARY KEY CLUSTERED 
 (
 	[idCustomer] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Tbl_KhuyenMai]    Script Date: 9/16/2022 11:13:22 PM ******/
@@ -210,16 +193,16 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Tbl_KhuyenMai](
-	[id] [int] NOT NULL,
+	[idPromotion] [int] NOT NULL,
 	[namePromotions] [nvarchar](max) NULL,
 	[status] [nvarchar](50) NULL,
 	[startDay] [date] NULL,
 	[endDay] [date] NULL,
-	[idTypeProduct] [int] NOT NULL,
+
  CONSTRAINT [PK_Tbl_KhuyenMai] PRIMARY KEY CLUSTERED 
 (
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	[idPromotion] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Tbl_NhaCungCap]    Script Date: 9/16/2022 11:13:22 PM ******/
@@ -233,7 +216,7 @@ CREATE TABLE [dbo].[Tbl_NhaCungCap](
  CONSTRAINT [PK_Tbl_NhaCungCap] PRIMARY KEY CLUSTERED 
 (
 	[idSupplier] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Tbl_NhanVien]    Script Date: 9/16/2022 11:13:22 PM ******/
@@ -254,7 +237,7 @@ CREATE TABLE [dbo].[Tbl_NhanVien](
  CONSTRAINT [PK_Tbl_NhanVien] PRIMARY KEY CLUSTERED 
 (
 	[idEmployee] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Tbl_PhieuNhapKho]    Script Date: 9/16/2022 11:13:22 PM ******/
@@ -263,12 +246,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Tbl_PhieuNhapKho](
-	[id] [int] NOT NULL,
+	[idReceipt] [int] NOT NULL,
 	[idSupplier] [nvarchar](50) NOT NULL,
+	[dateReceipt] [date] NULL,
+	[sumPay] [float] NULL,
  CONSTRAINT [Pk_id] PRIMARY KEY CLUSTERED 
 (
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	[idReceipt] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Tbl_PhieuYeuCauNhapHang]    Script Date: 9/16/2022 11:13:22 PM ******/
@@ -277,14 +262,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Tbl_PhieuYeuCauNhapHang](
-	[id] [int] NOT NULL,
+	[idCoupon] [int] NOT NULL,
 	[dateAdded] [date] NULL,
 	[intoMoney] [float] NULL,
 	
  CONSTRAINT [PK_Tbl_PhieuNhapHang] PRIMARY KEY CLUSTERED 
 (
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	[idCoupon] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Tbl_Quyen]    Script Date: 9/16/2022 11:13:22 PM ******/
@@ -293,12 +278,12 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Tbl_Quyen](
-	[id] [int] NOT NULL,
+	[idQuyen] [int] NOT NULL,
 	[nameAuth] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_Tbl_Quyen] PRIMARY KEY CLUSTERED 
 (
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	[idQuyen] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Tbl_SanPham]    Script Date: 9/16/2022 11:13:22 PM ******/
@@ -313,11 +298,11 @@ CREATE TABLE [dbo].[Tbl_SanPham](
 	[quantityProduct] [int] NOT NULL,
 	[statusProduct] [nvarchar](max) NULL,
 	[idTypeProduct] [int] NOT NULL,
-	[idManufacture] [int] NOT NULL,
+	[idManufactutre] [int] NOT NULL,
  CONSTRAINT [PK_Tbl_SanPham] PRIMARY KEY CLUSTERED 
 (
 	[idProduct] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Tbl_TaiKhoan]    Script Date: 9/16/2022 11:13:22 PM ******/
@@ -326,28 +311,19 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Tbl_TaiKhoan](
-	[id] [nvarchar](50) NOT NULL,
+	[idUser] [nvarchar](50) NOT NULL,
 	[UserName] [nvarchar](50) NOT NULL,
 	[Password] [nvarchar](100) NULL,
 	[idQuyen] [int] NOT NULL,
  CONSTRAINT [PK_Tbl_TaiKhoan] PRIMARY KEY CLUSTERED 
 (
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	[idUser] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[Tbl_ChiTietDanhMuc]  WITH CHECK ADD  CONSTRAINT [FK_DanhMuc] FOREIGN KEY([idTypeProduct])
-REFERENCES [dbo].[Tbl_DanhMucLapTop] ([id])
-GO
-ALTER TABLE [dbo].[Tbl_ChiTietDanhMuc] CHECK CONSTRAINT [FK_DanhMuc]
-GO
-ALTER TABLE [dbo].[Tbl_ChiTietDanhMuc]  WITH CHECK ADD  CONSTRAINT [FK_Hang] FOREIGN KEY([idManufactory])
-REFERENCES [dbo].[Tbl_HangSP] ([id])
-GO
-ALTER TABLE [dbo].[Tbl_ChiTietDanhMuc] CHECK CONSTRAINT [FK_Hang]
-GO
+
 ALTER TABLE [dbo].[Tbl_ChiTietHoaDon]  WITH CHECK ADD  CONSTRAINT [fk_bill] FOREIGN KEY([idBill])
-REFERENCES [dbo].[Tbl_HoaDon] ([id])
+REFERENCES [dbo].[Tbl_HoaDon] ([idBill])
 GO
 ALTER TABLE [dbo].[Tbl_ChiTietHoaDon] CHECK CONSTRAINT [fk_bill]
 GO
@@ -362,17 +338,17 @@ GO
 ALTER TABLE [dbo].[Tbl_ChiTietKhuyenMai] CHECK CONSTRAINT [fk_ProductPromotion]
 GO
 ALTER TABLE [dbo].[Tbl_ChiTietKhuyenMai]  WITH CHECK ADD  CONSTRAINT [fk_Promotion] FOREIGN KEY([idPromotion])
-REFERENCES [dbo].[Tbl_KhuyenMai] ([id])
+REFERENCES [dbo].[Tbl_KhuyenMai] ([idPromotion])
 GO
 ALTER TABLE [dbo].[Tbl_ChiTietKhuyenMai] CHECK CONSTRAINT [fk_Promotion]
 GO
 ALTER TABLE [dbo].[Tbl_ChiTietNhapKho]  WITH CHECK ADD  CONSTRAINT [FK_PhieuNhapKho] FOREIGN KEY([idReceipt])
-REFERENCES [dbo].[Tbl_PhieuNhapKho] ([id])
+REFERENCES [dbo].[Tbl_PhieuNhapKho] ([idReceipt])
 GO
 ALTER TABLE [dbo].[Tbl_ChiTietNhapKho] CHECK CONSTRAINT [FK_PhieuNhapKho]
 GO
 ALTER TABLE [dbo].[Tbl_ChiTietNhapKho]  WITH CHECK ADD  CONSTRAINT [FK_PhieuYc] FOREIGN KEY([idCoupon])
-REFERENCES [dbo].[Tbl_PhieuYeuCauNhapHang] ([id])
+REFERENCES [dbo].[Tbl_PhieuYeuCauNhapHang] ([idCoupon])
 GO
 ALTER TABLE [dbo].[Tbl_ChiTietNhapKho] CHECK CONSTRAINT [FK_PhieuYc]
 GO
@@ -382,7 +358,7 @@ GO
 ALTER TABLE [dbo].[Tbl_ChiTietNhapKho] CHECK CONSTRAINT [fk_SanPham]
 GO*/
 ALTER TABLE [dbo].[Tbl_ChiTietPhieuYcNhapHang]  WITH CHECK ADD  CONSTRAINT [fk_Coupon] FOREIGN KEY([idCoupon])
-REFERENCES [dbo].[Tbl_PhieuYeuCauNhapHang] ([id])
+REFERENCES [dbo].[Tbl_PhieuYeuCauNhapHang] ([idCoupon])
 GO
 ALTER TABLE [dbo].[Tbl_ChiTietPhieuYcNhapHang]  WITH CHECK ADD  CONSTRAINT [fk_Product] FOREIGN KEY([idProduct])
 REFERENCES [dbo].[Tbl_SanPham] ([idProduct])
@@ -404,11 +380,11 @@ REFERENCES [dbo].[Tbl_NhanVien] ([idEmployee])
 GO
 ALTER TABLE [dbo].[Tbl_HoaDon] CHECK CONSTRAINT [fk_NhanVienBill]
 GO
-ALTER TABLE [dbo].[Tbl_KhuyenMai]  WITH CHECK ADD  CONSTRAINT [fk_TypeProduct] FOREIGN KEY([idTypeProduct])
-REFERENCES [dbo].[Tbl_DanhMucLapTop] ([id])
+/*ALTER TABLE [dbo].[Tbl_KhuyenMai]  WITH CHECK ADD  CONSTRAINT [fk_TypeProduct] FOREIGN KEY([idTypeProduct])
+REFERENCES [dbo].[Tbl_DanhMucLapTop] ([idTypeProduct])
 GO
 ALTER TABLE [dbo].[Tbl_KhuyenMai] CHECK CONSTRAINT [fk_TypeProduct]
-GO
+GO*/
 /*ALTER TABLE [dbo].[Tbl_NhanVien]  WITH CHECK ADD  CONSTRAINT [fk_User] FOREIGN KEY([idUser])
 REFERENCES [dbo].[Tbl_TaiKhoan] ([id])
 GO
@@ -424,18 +400,18 @@ REFERENCES [dbo].[Tbl_NhaCungCap] ([idSupplier])
 GO
 ALTER TABLE [dbo].[Tbl_PhieuYeuCauNhapHang] CHECK CONSTRAINT [fk_idSupplier]
 GO*/
-ALTER TABLE [dbo].[Tbl_SanPham]  WITH CHECK ADD  CONSTRAINT [fk_ManufacturerProduct] FOREIGN KEY([idManufacture])
-REFERENCES [dbo].[Tbl_HangSP] ([id])
+ALTER TABLE [dbo].[Tbl_SanPham]  WITH CHECK ADD  CONSTRAINT [fk_ManufacturerProduct] FOREIGN KEY([idManufactutre])
+REFERENCES [dbo].[Tbl_HangSP] ([idManufactutre])
 GO
 ALTER TABLE [dbo].[Tbl_SanPham] CHECK CONSTRAINT [fk_ManufacturerProduct]
 GO
 ALTER TABLE [dbo].[Tbl_SanPham]  WITH CHECK ADD  CONSTRAINT [fk_TypeProductProduct] FOREIGN KEY([idTypeProduct])
-REFERENCES [dbo].[Tbl_DanhMucLapTop] ([id])
+REFERENCES [dbo].[Tbl_DanhMucLapTop] ([idTypeProduct])
 GO
 ALTER TABLE [dbo].[Tbl_SanPham] CHECK CONSTRAINT [fk_TypeProductProduct]
 GO
 ALTER TABLE [dbo].[Tbl_TaiKhoan]  WITH CHECK ADD  CONSTRAINT [fk_QuyenID] FOREIGN KEY([idQuyen])
-REFERENCES [dbo].[Tbl_Quyen] ([id])
+REFERENCES [dbo].[Tbl_Quyen] ([idQuyen])
 GO
 ALTER TABLE [dbo].[Tbl_TaiKhoan] CHECK CONSTRAINT [fk_QuyenID]
 GO
@@ -474,17 +450,11 @@ INSERT INTO Tbl_HangSP VALUES
 
 ---   2) Danh mục laptop   ---
 INSERT INTO Tbl_DanhMucLapTop VALUES
-(5001, N'Laptop gaming', 4001),
-(5002, N'Ultrabook mỏng nhẹ', 4002),
-(5003, N'Laptop văn phòng', 4003)
+(5001, N'Laptop gaming'),
+(5002, N'Ultrabook mỏng nhẹ'),
+(5003, N'Laptop văn phòng')
 
----   3) Chi tiết danh mục   ---
-INSERT INTO Tbl_ChiTietDanhMuc VALUES
-(4001, 5001),
-(4001, 5001),
-(4002, 5002),
-(4003, 5003),
-(4003, 5003)
+
 
 ---	  4) Sản phẩm   ----
 INSERT INTO Tbl_SanPham VALUES
@@ -553,11 +523,11 @@ INSERT INTO Tbl_Quyen VALUES
 
 ---   7) Dữ liệu bảng tài khoản   ---
 INSERT INTO Tbl_TaiKhoan VALUES 
-('Trong1', N'Nguyễn Hữu Trọng', '1234', 7001),
-('Tien2', N'Nguyễn Tiến', '1234', 7002),
-('Anh3', N'Nguyễn Đức Anh', '1234', 7002),
-('Quan4', N'Nguyễn Hoàng Quân', '1234', 7002),
-('Truc5', N'Thanh Trực', '1234', 7002)
+('Trong', N'admin', '1234', 7001),
+('Tien', N'user1', '1234', 7002),
+('Anh', N'user2', '1234', 7002),
+('Quan', N'user3', '1234', 7002),
+('Truc', N'user4', '1234', 7002)
 
 ---	  8) Dữ liệu bảng nhân viên   ---
 INSERT INTO Tbl_NhanVien VALUES
@@ -584,10 +554,10 @@ INSERT INTO Tbl_ChiTietHoaDon VALUES
 
 ---   11) Khuyến mãi   ---
 INSERT INTO Tbl_KhuyenMai VALUES
-(2001, N'Chúc mừng năm mới 2022', N'Hết khuyến mãi', '2022-01-01', '2022-03-03', 5001),
-(2002, N'Mừng lễ 30/4', N'Hết khuyến mãi', '2022-04-25', '2022-05-05', 5002),
-(2003, N'Back to School', N'Đang khuyến mãi', '2022-08-25', '2022-09-25', 5003),
-(2004, N'Merry Chirstmas', N'Sắp khuyến mãi', '2022-12-20', '2022-12-28', 5003)
+(2001, N'Chúc mừng năm mới 2022', N'Hết khuyến mãi', '2022-01-01', '2022-03-03'),
+(2002, N'Mừng lễ 30/4', N'Hết khuyến mãi', '2022-04-25', '2022-05-05'),
+(2003, N'Back to School', N'Đang khuyến mãi', '2022-08-25', '2022-09-25'),
+(2004, N'Merry Chirstmas', N'Sắp khuyến mãi', '2022-12-20', '2022-12-28')
 
 ---   12) Dữ liệu bảng chi tiết khuyến mãi
 INSERT INTO Tbl_ChiTietKhuyenMai VALUES
@@ -607,7 +577,7 @@ INSERT INTO Tbl_NhaCungCap VALUES
 
 ---    14) Phiếu nhập kho   ---
 INSERT INTO Tbl_PhieuNhapKho VALUES
-(3001, 'ASUS')
+(3001, 'ASUS', '2019-12-12', 19000000)
 
 ---   15) Phiếu yêu cầu nhập hàng   --- NO
 INSERT INTO Tbl_PhieuYeuCauNhapHang VALUES
@@ -621,4 +591,14 @@ INSERT INTO Tbl_ChiTietNhapKho VALUES
 INSERT INTO Tbl_ChiTietPhieuYcNhapHang VALUES
 ('SP001', 6001, 1, 20000000, 20000000)
 
+alter table Tbl_ChiTietHoaDon
+add primary key (idProduct,idBill)
 
+alter table Tbl_ChiTietKhuyenMai
+add primary key (idProduct,idPromotion)
+
+alter table Tbl_ChiTietNhapKho
+add primary key (idReceipt,idCoupon)
+
+alter table Tbl_ChiTietPhieuYcNhapHang
+add primary key (idProduct,idCoupon)

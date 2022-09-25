@@ -20,3 +20,14 @@ D:\c#\QuanLyBanLapTop\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 D:\c#\QuanLyBanLapTop\BUS\obj\Debug\BUS.csproj.CopyComplete
 D:\c#\QuanLyBanLapTop\BUS\obj\Debug\BUS.dll
 D:\c#\QuanLyBanLapTop\BUS\obj\Debug\BUS.pdb
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\BUS.dll
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\BUS.pdb
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\DAO.dll
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\DTO.dll
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\DAO.pdb
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\bin\Debug\DTO.pdb
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\obj\Debug\BUS.csproj.CopyComplete
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\obj\Debug\BUS.dll
+E:\Workspace\C#\DoAnC-_QuanLyBanLapTop\QuanLyBanLapTop\BUS\obj\Debug\BUS.pdb

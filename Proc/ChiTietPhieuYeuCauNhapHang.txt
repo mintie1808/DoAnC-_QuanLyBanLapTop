@@ -1,0 +1,37 @@
+create proc		[dbo].[Proc_addDetailCoupon]
+@quantityImport int,
+@unitPrice float,
+@intoMoney float,
+@idCoupon int,
+@idProduct nvarchar(50)
+as
+begin
+insert into Tbl_ChiTietPhieuYcNhapHang(quantityImport,unitPrice, intoMoney, idCoupon , idProduct)
+values (@quantityImport,@unitPrice, @intoMoney, @idCoupon , @idProduct)
+end
+
+create proc [dbo].[Proc_deleteDetailCoupon]
+
+@idProduct nvarchar(50),
+@idCoupon int
+as
+begin
+
+delete from Tbl_ChiTietPhieuYcNhapHang
+WHERE idCoupon = @idCoupon and idProduct = @idProduct
+end
+
+create proc [dbo].[Proc_updateDetailCoupon]
+
+@quantityImport int,
+@unitPrice float,
+@intoMoney float,
+@idCoupon int,
+@idProduct nvarchar(50)
+as
+begin
+
+UPDATE Tbl_ChiTietPhieuYcNhapHang
+SET quantityImport = @quantityImport,  unitPrice = @unitPrice, intoMoney = @intoMoney
+WHERE idCoupon = @idCoupon and idProduct = @idProduct
+end

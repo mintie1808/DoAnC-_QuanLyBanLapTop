@@ -36,13 +36,13 @@
             this.btn_login = new System.Windows.Forms.Button();
             this.btn_forgot = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.img_avatarLogin = new System.Windows.Forms.PictureBox();
             this.text_title = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_exit = new System.Windows.Forms.Button();
+            this.img_avatarLogin = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_avatarLogin)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_avatarLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // text_user
@@ -54,6 +54,7 @@
             this.text_user.Size = new System.Drawing.Size(95, 23);
             this.text_user.TabIndex = 0;
             this.text_user.Text = "Tài khoản";
+            this.text_user.Click += new System.EventHandler(this.text_user_Click);
             // 
             // text_pass
             // 
@@ -114,17 +115,6 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
-            // img_avatarLogin
-            // 
-            this.img_avatarLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.img_avatarLogin.Image = ((System.Drawing.Image)(resources.GetObject("img_avatarLogin.Image")));
-            this.img_avatarLogin.Location = new System.Drawing.Point(3, 18);
-            this.img_avatarLogin.Name = "img_avatarLogin";
-            this.img_avatarLogin.Size = new System.Drawing.Size(429, 390);
-            this.img_avatarLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.img_avatarLogin.TabIndex = 0;
-            this.img_avatarLogin.TabStop = false;
-            // 
             // text_title
             // 
             this.text_title.AutoSize = true;
@@ -135,6 +125,7 @@
             this.text_title.Size = new System.Drawing.Size(333, 38);
             this.text_title.TabIndex = 7;
             this.text_title.Text = "Đăng nhập hệ thống";
+            this.text_title.Click += new System.EventHandler(this.text_title_Click);
             // 
             // groupBox2
             // 
@@ -164,6 +155,17 @@
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.exitSystem_click);
             // 
+            // img_avatarLogin
+            // 
+            this.img_avatarLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.img_avatarLogin.Image = ((System.Drawing.Image)(resources.GetObject("img_avatarLogin.Image")));
+            this.img_avatarLogin.Location = new System.Drawing.Point(3, 18);
+            this.img_avatarLogin.Name = "img_avatarLogin";
+            this.img_avatarLogin.Size = new System.Drawing.Size(429, 390);
+            this.img_avatarLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_avatarLogin.TabIndex = 0;
+            this.img_avatarLogin.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -176,9 +178,9 @@
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.Login_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.img_avatarLogin)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_avatarLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
