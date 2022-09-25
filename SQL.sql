@@ -523,11 +523,11 @@ INSERT INTO Tbl_Quyen VALUES
 
 ---   7) Dữ liệu bảng tài khoản   ---
 INSERT INTO Tbl_TaiKhoan VALUES 
-('Trong1', N'Nguyễn Hữu Trọng', '1234', 7001),
-('Tien2', N'Nguyễn Tiến', '1234', 7002),
-('Anh3', N'Nguyễn Đức Anh', '1234', 7002),
-('Quan4', N'Nguyễn Hoàng Quân', '1234', 7002),
-('Truc5', N'Thanh Trực', '1234', 7002)
+('Trong', N'admin', '1234', 7001),
+('Tien', N'user1', '1234', 7002),
+('Anh', N'user2', '1234', 7002),
+('Quan', N'user3', '1234', 7002),
+('Truc', N'user4', '1234', 7002)
 
 ---	  8) Dữ liệu bảng nhân viên   ---
 INSERT INTO Tbl_NhanVien VALUES
