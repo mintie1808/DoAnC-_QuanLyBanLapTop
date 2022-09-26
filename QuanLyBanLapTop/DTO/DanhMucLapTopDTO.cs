@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-   public class DanhMucLapTop
+   public class DanhMucLapTopDTO
     {
         private int idTypeProduct;
         private string nameTypeProduct;
@@ -22,6 +22,10 @@ namespace DTO
             get { return nameTypeProduct; }
             set { nameTypeProduct = value; }
         }
-
+        public DanhMucLapTopDTO(int id, string name)
+        {
+            this.idTypeProduct = id;
+            this.nameTypeProduct = name;
+        }
     }
 }
