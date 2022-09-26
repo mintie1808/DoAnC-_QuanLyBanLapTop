@@ -3,7 +3,7 @@ create proc [dbo].[Proc_addManufacture]
 @name nvarchar(50)
 as
 begin
-insert into Tbl_HangSP(id, nameManufacturer)
+insert into Tbl_HangSP(idManufactutre, nameManufactutre)
 values (@id, @name)
 end
 
@@ -12,7 +12,7 @@ create proc [dbo].[Proc_deleteManufacture]
 as
 begin
 delete from Tbl_HangSP
-WHERE id = @id
+WHERE idManufactutre = @id
 end
 
 create proc [dbo].[Proc_updateManufacture]
@@ -21,6 +21,6 @@ create proc [dbo].[Proc_updateManufacture]
 as
 begin
 UPDATE Tbl_HangSP
-SET id=@id, nameManufacturer = @name
-WHERE id = @id
+SET idManufactutre=@id, nameManufactutre = @name
+WHERE idManufactutre = @id
 end
