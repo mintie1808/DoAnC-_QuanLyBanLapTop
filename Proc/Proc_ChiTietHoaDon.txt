@@ -1,0 +1,45 @@
+use QuanLyBanLapTop
+go
+create proc Proc_addChiTietHoaDon
+
+@quantityProduct int,
+@unitPrice float,
+@intoMoney float,
+@moneyDown float,
+@idProduct nvarchar(50),
+@idBill int
+
+as 
+begin
+insert into [dbo].[Tbl_ChiTietHoaDon](quantityProduct, unitPrice,intoMoney,moneyDown, idProduct, idBill)
+ values (@quantityProduct, @unitPrice, @intoMoney,@moneyDown, @idProduct,@idBill)
+ end
+
+go
+create proc Proc_updateChiTietHoaDon
+
+@quantityProduct int,
+@unitPrice float,
+@intoMoney float,
+@moneyDown float,
+@idProduct nvarchar(50),
+@idBill int
+
+as 
+begin
+UPDATE [dbo].[Tbl_ChiTietHoaDon]
+SET  quantityProduct=@quantityProduct, unitPrice=@unitPrice, intoMoney=@intoMoney, moneyDown=@moneyDown
+WHERE idBill =@idBill and idProduct = @idProduct
+end
+
+go
+create proc Proc_deleteChiTietHoaDon
+
+@idProduct nvarchar(50),
+@idBill int
+
+as 
+begin 
+delete from [dbo].[Tbl_ChiTietHoaDon] 
+WHERE idProduct =@idProduct and idProduct = @idProduct
+end

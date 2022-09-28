@@ -1,0 +1,42 @@
+use QuanLyBanLapTop
+go
+create proc Proc_addChiTietKhuyenMai
+
+@discount float,
+@status nvarchar(50),
+@idProduct nvarchar(50),
+@idPromotion int
+
+as 
+begin
+insert into [dbo].[Tbl_ChiTietKhuyenMai](discount, status, idProduct, idPromotion)
+ values (@discount, @status, @idProduct, @idPromotion)
+ end
+
+
+go
+create proc Proc_updateChiTietKhuyenMai
+
+@discount float,
+@status nvarchar(50),
+@idProduct nvarchar(50),
+@idPromotion int
+
+as 
+begin
+UPDATE [dbo].[Tbl_ChiTietKhuyenMai]
+SET  discount=@discount, status = @status
+WHERE idPromotion =@idPromotion and idProduct = @idProduct
+end
+
+go
+create proc Proc_deleteChiTietKhuyenMai
+
+@idProduct nvarchar(50),
+@idPromotion int
+
+as 
+begin 
+delete from [dbo].[Tbl_ChiTietKhuyenMai] 
+WHERE idPromotion =@idPromotion and idProduct = @idProduct
+end

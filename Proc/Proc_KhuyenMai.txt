@@ -1,0 +1,41 @@
+use QuanLyBanLapTop
+go
+create proc Proc_addKhuyenMai
+
+@idPromotion int,
+@namePromotion nvarchar(max),
+@status nvarchar(50),
+@startDay date,
+@endDay date
+
+as 
+begin
+insert into [dbo].[Tbl_KhuyenMai](idPromotion, namePromotions, status, startDay,endDay)
+ values (@idPromotion, @namePromotion, @status, @startDay, @endDay)
+ end
+
+
+
+ go
+create proc Proc_updateKhuyenMai
+
+@idPromotion int,
+@namePromotion nvarchar(max),
+@status nvarchar(50),
+@startDay date,
+@endDay date
+
+as 
+begin
+UPDATE [dbo].[Tbl_KhuyenMai]
+SET  namePromotions= @namePromotion, status = @status, startDay= @startDay, endDay=@endDay
+WHERE idPromotion =@idPromotion
+ end
+
+ go
+create proc Proc_deleteKhuyenMai
+@idPromotion int
+as 
+begin
+  delete from [dbo].[Tbl_KhuyenMai] where idPromotion=@idPromotion
+ end
