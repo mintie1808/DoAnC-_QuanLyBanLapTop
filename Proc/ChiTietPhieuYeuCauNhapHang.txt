@@ -10,6 +10,7 @@ insert into Tbl_ChiTietPhieuYcNhapHang(quantityImport,unitPrice, intoMoney, idCo
 values (@quantityImport,@unitPrice, @intoMoney, @idCoupon , @idProduct)
 end
 
+go
 create proc [dbo].[Proc_deleteDetailCoupon]
 
 @idProduct nvarchar(50),
@@ -21,6 +22,7 @@ delete from Tbl_ChiTietPhieuYcNhapHang
 WHERE idCoupon = @idCoupon and idProduct = @idProduct
 end
 
+go
 create proc [dbo].[Proc_updateDetailCoupon]
 
 @quantityImport int,

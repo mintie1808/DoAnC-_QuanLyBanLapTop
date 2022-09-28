@@ -1,4 +1,4 @@
-USE QuanLyBanLapTop
+﻿USE QuanLyBanLapTop
 GO
 
 CREATE PROC Proc_addDetailReceipt
@@ -16,6 +16,7 @@ INSERT INTO dbo.Tbl_ChiTietNhapKho
 VALUES (@idReceipt, @idCoupon, @quantityRequest, @quantityActual, @unitPrice, @intoMoney)
 END 
 
+go
 CREATE PROC Proc_deleteDetailReceipt
 /* tạo biến trùng tên với biến trong code */
 @idReceipt INT,
@@ -25,6 +26,7 @@ BEGIN
 DELETE FROM dbo.Tbl_ChiTietNhapKho WHERE idReceipt = @idReceipt AND idCoupon = @idCoupon
 END 
 
+go
 CREATE PROC Proc_updateDetailReceipt
 /* tạo biến trùng tên với biến trong code */
 @idReceipt int,

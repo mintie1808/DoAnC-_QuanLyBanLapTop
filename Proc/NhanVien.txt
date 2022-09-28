@@ -17,7 +17,7 @@ end
 
 go
 create proc [dbo].[Proc_deleteEmployee]
-@idEmployee int
+@idEmployee nvarchar(50)
 as
 begin
 delete from Tbl_NhanVien

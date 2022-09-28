@@ -7,6 +7,7 @@ insert into Tbl_HangSP(idManufactutre, nameManufactutre)
 values (@id, @name)
 end
 
+go
 create proc [dbo].[Proc_deleteManufacture]
 @id int
 as
@@ -15,6 +16,7 @@ delete from Tbl_HangSP
 WHERE idManufactutre = @id
 end
 
+go
 create proc [dbo].[Proc_updateManufacture]
 @id int,
 @name nvarchar(50)

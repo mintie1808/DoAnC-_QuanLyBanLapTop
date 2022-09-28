@@ -1,4 +1,4 @@
-USE QuanLyBanLapTop
+﻿USE QuanLyBanLapTop
 GO
 
 CREATE PROC Proc_addSupplier
@@ -12,6 +12,7 @@ INSERT INTO dbo.Tbl_NhaCungCap (idSupplier,nameSupplier)
 VALUES (@idSupplier, @nameSupplier)
 END 
 
+go
 CREATE PROC Proc_deleteSupplier
 /* tạo biến trùng tên với biến trong code */
 @idSupplier NVARCHAR(50)
@@ -20,7 +21,7 @@ BEGIN
 DELETE FROM dbo.Tbl_NhaCungCap WHERE idSupplier = @idSupplier
 END 
 
-
+go
 CREATE PROC Proc_updateSupplier
 /* tạo biến trùng tên với biến trong code */
 @idSupplier NVARCHAR(50),

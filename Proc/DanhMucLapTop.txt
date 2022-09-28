@@ -9,6 +9,7 @@ begin
 	insert into [dbo].[Tbl_DanhMucLapTop] (idTypeProduct, nameTypeProduct)
 	values (@id, @name)
 end
+go
 
 create proc [dbo].[Proc_updateTypeProduct]
 @id int,
@@ -19,7 +20,7 @@ begin
 	SET idTypeProduct=@id, nameTypeProduct=@name
 	WHERE idTypeProduct = @id
 end
-
+go
 create proc [dbo].[Proc_deleteTypeProduct]
 @id int
 as
