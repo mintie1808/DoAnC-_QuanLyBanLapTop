@@ -1,0 +1,40 @@
+use QuanLyBanLapTop
+go
+create proc Proc_addKhachHang
+@idCustomer nvarchar(50),
+@nameCustomer nvarchar(50),
+@address nvarchar(max),
+@phoneNumber nvarchar(10),
+@email nvarchar(50),
+
+as 
+begin
+insert into [dbo].[Tbl_KhachHang](idCustomer, nameCustomer, address, phoneNumber, email)
+ values (@idCustomer, @nameCustomer,@address, @phoneNumber, @email)
+ end
+
+create proc Proc_updateKhachHang
+@idCustomer nvarchar(50),
+@nameCustomer nvarchar(50),
+@address nvarchar(max),
+@phoneNumber nvarchar(10),
+@email nvarchar(50),
+
+as
+begin
+	UPDATE tbl_KhachHang
+	SET idCustomer = @idCustomer nameCustomer=@nameCustomer, address=@address, 
+		phoneNumber=@phoneNumber, email=@email
+	WHERE idCustomer = @idCustomer
+end
+
+create proc Proc_deleteKhachHang
+@idCustomer nvarchar(50),
+@nameCustomer nvarchar(50),
+@address nvarchar(max),
+@phoneNumber nvarchar(10),
+@email nvarchar(50),
+as
+begin
+	delete from Tbl_KhachHang
+	where idCustomer=@idCustomer
