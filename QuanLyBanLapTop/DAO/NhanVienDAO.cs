@@ -14,7 +14,7 @@ namespace DAO
     {
         private Connect conn = new Connect();
         // thêm 1 quyền
-        public void addNhanVien(NhanVien nv)
+        public void addNhanVien(NhanVienDTO nv)
         {
             //kết nối với connect
             conn.Conn.Open();
@@ -41,7 +41,7 @@ namespace DAO
             // xong giờ qua tạo biến proc là ok;
         }
 
-        public void updateNhanVien(NhanVien nv)
+        public void updateNhanVien(NhanVienDTO nv)
         {
             //kết nối với connect
             conn.Conn.Open();
@@ -88,5 +88,5 @@ namespace DAO
         }
     }
 
-    
+
 }
