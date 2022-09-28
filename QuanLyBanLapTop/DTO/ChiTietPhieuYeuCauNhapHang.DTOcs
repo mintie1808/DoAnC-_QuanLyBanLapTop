@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class ChiTietPhieuYcNhapHang
+    public class ChiTietPhieuYeuCauNhapHangDTO
     {
         private string idProduct;
         private int idCoupon;
@@ -43,6 +43,13 @@ namespace DTO
             get { return intoMoney; }   // get method
             set { intoMoney = value; }  // set method
         }
-
+        public ChiTietPhieuYeuCauNhapHangDTO(string idProduct, int idCoupon, int quantityImport, float unitPrice, float intoMoney)
+        {
+            IdProduct = idProduct;
+            IdCoupon = idCoupon;
+            QuantityImport = quantityImport;
+            UnitPrice = unitPrice;
+            IntoMoney = intoMoney;
+        }
     }
 }
