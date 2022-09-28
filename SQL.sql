@@ -423,19 +423,6 @@ GO
 ALTER TABLE [dbo].[Tbl_PhieuYeuCauNhapHang] CHECK CONSTRAINT [fk_NhapHang]
 GO
 
-/****** Object:  StoredProcedure [dbo].[proc_login]    Script Date: 9/16/2022 11:13:22 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE PROC [dbo].[proc_login]
-@user nvarchar(50),
-@pass nvarchar(50)
-as 
-BEGIN
-	select * from Tbl_TaiKhoan where UserName = @user and Password = @pass
-END
-GO
 USE [master]
 GO
 ALTER DATABASE [QuanLyBanLapTop] SET  READ_WRITE 
