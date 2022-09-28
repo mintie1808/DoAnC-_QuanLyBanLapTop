@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace DTO
 {
-    public class NhaCungCap
+    public class NhaCungCapDTO
     {
         private string idSupplier;
         private string nameSupplier;
@@ -22,6 +22,11 @@ namespace DTO
         {
             get { return nameSupplier; }
             set { nameSupplier = value; }
+        }
+        public NhaCungCapDTO(string idSupplier, string nameSupplier)
+        {
+            IdSupplier = idSupplier;
+            NameSupplier = nameSupplier;
         }
     }
 }
