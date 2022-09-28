@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class ChiTietNhapKho
+    public class ChiTietNhapKhoDTO
     {
         private int quantityRequest;
         private int quantityActual;
@@ -51,6 +51,15 @@ namespace DTO
             set { idCoupon = value; }
         }
 
-
+        public ChiTietNhapKhoDTO(int quantityRequest, int quantityActual, float unitPrice, float intoMoney, int idReceipt, int idCoupon)
+        {
+            QuantityRequest = quantityRequest;
+            QuantityActual = quantityActual;
+            UnitPrice = unitPrice;
+            IntoMoney = intoMoney;
+            IdReceipt = idReceipt;
+            IdCoupon = idCoupon;
+            
+        }
     }
 }
