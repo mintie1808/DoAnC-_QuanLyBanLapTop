@@ -41,7 +41,7 @@ namespace DAO
             conn.Conn.Close();
         }
 
-        public void deleteDetailCoupon(int idCoupon, int idProduct)
+        public void deleteDetailCoupon(string idProduct, int idCoupon)
         {
             conn.Conn.Open();
             SqlCommand command = new SqlCommand("Proc_deleteDetailCoupon", conn.Conn);
