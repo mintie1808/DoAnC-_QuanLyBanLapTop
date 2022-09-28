@@ -51,7 +51,7 @@ namespace DTO
             set { idCoupon = value; }
         }
 
-        public ChiTietNhapKhoDTO(int quantityRequest, int quantityActual, float unitPrice, float intoMoney, int idReceipt, int idCoupon)
+        public ChiTietNhapKhoDTO(int idReceipt, int idCoupon, int quantityRequest, int quantityActual, float unitPrice, float intoMoney)
         {
             QuantityRequest = quantityRequest;
             QuantityActual = quantityActual;
