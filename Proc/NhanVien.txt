@@ -1,0 +1,43 @@
+create proc [dbo].[Proc_addEmployee]
+
+@idEmployee nvarchar(50),
+@nameEmployee nvarchar(50),
+@serviceEmployee nvarchar(50),
+@phoneNumber nvarchar(50),
+@salaryEmployee float,
+@totalSales float,
+@quantityBillPay int,
+@idUser nvarchar(50),
+@birthday date
+as
+begin
+insert into Tbl_NhanVien(idEmployee, nameEmployee, serviceEmployee, phoneNumber, salaryEmployee, totalSales, quantityBillPay, idUser, birthday)
+values (@idEmployee, @nameEmployee, @serviceEmployee, @phoneNumber, @salaryEmployee, @totalSales, @quantityBillPay, @idUser, @birthday)
+end
+
+go
+create proc [dbo].[Proc_deleteEmployee]
+@idEmployee int
+as
+begin
+delete from Tbl_NhanVien
+WHERE idEmployee = @idEmployee
+end
+
+go
+create proc [dbo].[Proc_updateEmployee]
+@idEmployee nvarchar(50),
+@nameEmployee nvarchar(50),
+@serviceEmployee nvarchar(50),
+@phoneNumber nvarchar(50),
+@salaryEmployee float,
+@totalSales float,
+@quantityBillPay int,
+@idUser nvarchar(50),
+@birthday date
+as
+begin
+UPDATE Tbl_NhanVien
+SET nameEmployee = @nameEmployee, serviceEmployee = @serviceEmployee, phoneNumber = @phoneNumber, salaryEmployee = @salaryEmployee, totalSales = @totalSales, quantityBillPay = @quantityBillPay, idUser = @idUser, birthday = @birthday
+WHERE idEmployee = @idEmployee
+end

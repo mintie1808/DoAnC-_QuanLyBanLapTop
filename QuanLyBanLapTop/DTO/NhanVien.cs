@@ -9,7 +9,7 @@ namespace DTO
 {
     public class NhanVien
     {
-        private int idEmployee;
+        private string idEmployee;
         private string nameEmployee;
         private string serviceEmployee;
         private DateTime birthday;
@@ -20,7 +20,7 @@ namespace DTO
         private float salaryEmployee;
 
 
-        public int IdEmployee
+        public string IdEmployee
         {
             get { return idEmployee; }
             set { idEmployee = value; }
@@ -73,6 +73,20 @@ namespace DTO
             set { quantityBillPay = value; }
         }
 
+        public NhanVien (string idEmployee, string nameEmployee, string serviceEmployee, DateTime birthday, string phoneNumber, float totalSales, int quantityBillPay, string idUser, float salaryEmployee)
+        {
+            IdEmployee = idEmployee;
+            NameEmployee = nameEmployee;
+            ServiceEmployee = serviceEmployee;
+            Birthday = birthday;
+            PhoneNumber = phoneNumber;
+            TotalSales = totalSales;
+            QuantityBillPay = quantityBillPay;
+            IdUser = idUser;
+            SalaryEmployee = salaryEmployee;
+ 
+        }
     }
+    
 
 }

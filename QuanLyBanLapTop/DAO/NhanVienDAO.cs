@@ -13,12 +13,6 @@ namespace DAO
     public class NhanVienDao
     {
         private Connect conn = new Connect();
-
-        /**
-        NhanVienDao nvDAO = new NhanVienDao();
-        NhanVien nv = new NhanVien(1, 'quan', 'cntt', '0389938946', 8000000, 200, 50, '1');
-        nvDAO.addNhanVien(nv);
-        **/
         // thêm 1 quyền
         public void addNhanVien(NhanVien nv)
         {
@@ -26,7 +20,7 @@ namespace DAO
             conn.Conn.Open();
 
             //tạo lớp kết nối sqlCommand
-            SqlCommand command = new SqlCommand("Proc_addNhanVien", conn.Conn);
+            SqlCommand command = new SqlCommand("Proc_addEmployee", conn.Conn);
             //proc lát mình tạo trong sqlServer
             //đặt tên biến 
             command.CommandType = CommandType.StoredProcedure;
@@ -35,6 +29,7 @@ namespace DAO
             command.Parameters.AddWithValue("@serviceEmployee", nv.ServiceEmployee);
             command.Parameters.AddWithValue("@phoneNumber", nv.PhoneNumber);
             command.Parameters.AddWithValue("@salaryEmployee", nv.SalaryEmployee);
+            command.Parameters.AddWithValue("@birthday", nv.Birthday);
             command.Parameters.AddWithValue("@totalSales", nv.TotalSales);
             command.Parameters.AddWithValue("@quantityBillPay", nv.QuantityBillPay);
             command.Parameters.AddWithValue("@idUser", nv.IdUser);
@@ -61,6 +56,7 @@ namespace DAO
             command.Parameters.AddWithValue("@serviceEmployee", nv.ServiceEmployee);
             command.Parameters.AddWithValue("@phoneNumber", nv.PhoneNumber);
             command.Parameters.AddWithValue("@salaryEmployee", nv.SalaryEmployee);
+            command.Parameters.AddWithValue("@birthday", nv.Birthday);
             command.Parameters.AddWithValue("@totalSales", nv.TotalSales);
             command.Parameters.AddWithValue("@quantityBillPay", nv.QuantityBillPay);
             command.Parameters.AddWithValue("@idUser", nv.IdUser);
@@ -72,7 +68,7 @@ namespace DAO
             // xong giờ qua tạo biến proc là ok;
         }
 
-        public void deleteQuyen(int id)
+        public void deleteEmployee(string id)
         {
             //kết nối với connect
             conn.Conn.Open();

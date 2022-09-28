@@ -37,5 +37,16 @@ namespace DTO
             get { return idSupplier; }
             set { idSupplier = value; }
         }
+        public PhieuNhapKho(int idReceipt, string idSupplier, DateTime dateReceipt, float sumPay)
+        {
+            IdReceipt = idReceipt;
+            IdSupplier = idSupplier;
+            DateReceipt = dateReceipt;
+            SumPay = sumPay;
+            IdReceipt = idReceipt;
+            DateReceipt = dateReceipt;
+            SumPay = sumPay;
+            IdSupplier = idSupplier;
+        }
     }
 }

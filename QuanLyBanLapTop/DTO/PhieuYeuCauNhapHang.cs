@@ -17,5 +17,17 @@ namespace DTO
         public DateTime DateAdded { get { return dateAdded; } set { dateAdded = value; } }
         public float IntoMoney { get { return intoMoney; } set { intoMoney = value; } }
         public string IdSupplier { get { return idSupplier; } set { idSupplier = value; } }
+
+        public PhieuYeuCauNhapHang(int idCoupon, DateTime dateAdded, float intoMoney, string idSupplier)
+        {
+            IdCoupon = idCoupon;
+            DateAdded = dateAdded;
+            IntoMoney = intoMoney;
+            IdSupplier = idSupplier;
+            IdCoupon = idCoupon;
+            DateAdded = dateAdded;
+            IntoMoney = intoMoney;
+            IdSupplier = idSupplier;
+        }
     }
 }

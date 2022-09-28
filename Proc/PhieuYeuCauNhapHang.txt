@@ -9,6 +9,7 @@ insert into Tbl_PhieuYeuCauNhapHang(idCoupon, dateAdded, intoMoney,idSupplier)
 values (@idCoupon, @dateAdded, @intoMoney, @idSupplier)
 end
 
+go
 create proc [dbo].[Proc_deleteCoupon]
 
 @idCoupon int
@@ -19,6 +20,7 @@ delete from Tbl_PhieuYeuCauNhapHang
 WHERE idCoupon = @idCoupon
 end
 
+go
 create proc [dbo].[Proc_updateCoupon]
 @idCoupon int,
 @dateAdded date,
