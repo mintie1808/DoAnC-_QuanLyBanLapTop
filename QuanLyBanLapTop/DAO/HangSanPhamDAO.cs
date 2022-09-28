@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace DAO
     {
         private Connect conn = new Connect();
 
-        public void addHangSanPham(HangSP hsp)
+        public void addHangSanPham(HangSanPhamDTO hsp)
         {
             // ket noi voi connect
             conn.Conn.Open();
@@ -20,7 +20,7 @@ namespace DAO
             SqlCommand command = new SqlCommand("Proc_addManufacture", conn.Conn);
             // dat ten bien
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@id", hsp.Id);
+            command.Parameters.AddWithValue("@id", hsp.IdManufactutre);
             command.Parameters.AddWithValue("@name", hsp.NameManufacturer);
             command.Connection = conn.Conn;
             // tao bien reader
@@ -29,7 +29,7 @@ namespace DAO
             conn.Conn.Close();
         }
 
-        public void updateHangSanPham(HangSP hsp)
+        public void updateHangSanPham(HangSanPhamDTO hsp)
         {
             // ket noi voi connect
             conn.Conn.Open();
@@ -37,7 +37,7 @@ namespace DAO
             SqlCommand command = new SqlCommand("Proc_updateManufacture", conn.Conn);
             // dat ten bien
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@id", hsp.Id);
+            command.Parameters.AddWithValue("@id", hsp.IdManufactutre);
             command.Parameters.AddWithValue("@name", hsp.NameManufacturer);
             command.Connection = conn.Conn;
             // tao bien reader

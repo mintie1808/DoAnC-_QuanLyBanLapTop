@@ -3,23 +3,21 @@ go
  
 create proc Proc_addTypeProduct
 @id int,
-@name nvarchar(50),
-@idManufacturer int
+@name nvarchar(50)
 as 
 begin
-	insert into [dbo].[Tbl_DanhMucLapTop] (id, namTypeProduct, idManufacturer)
-	values (@id, @name, @idManufacturer)
+	insert into [dbo].[Tbl_DanhMucLapTop] (idTypeProduct, nameTypeProduct)
+	values (@id, @name)
 end
 
 create proc [dbo].[Proc_updateTypeProduct]
 @id int,
-@name nvarchar(50),
-@idManufacturer int
+@name nvarchar(50)
 as
 begin
 	UPDATE Tbl_DanhMucLapTop
-	SET id=@id, namTypeProduct=@name, idManufacturer=@idManufacturer
-	WHERE id = @id
+	SET idTypeProduct=@id, nameTypeProduct=@name
+	WHERE idTypeProduct = @id
 end
 
 create proc [dbo].[Proc_deleteTypeProduct]
@@ -27,5 +25,5 @@ create proc [dbo].[Proc_deleteTypeProduct]
 as
 begin
 	delete from Tbl_DanhMucLapTop
-WHERE id = @id
+WHERE idTypeProduct = @id
 end

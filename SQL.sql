@@ -1,4 +1,4 @@
-﻿
+
 /****** Object:  Database [QuanLyBanLapTop]    Script Date: 9/16/2022 11:13:20 PM ******/
 CREATE DATABASE [QuanLyBanLapTop]
 GO
@@ -265,7 +265,7 @@ CREATE TABLE [dbo].[Tbl_PhieuYeuCauNhapHang](
 	[idCoupon] [int] NOT NULL,
 	[dateAdded] [date] NULL,
 	[intoMoney] [float] NULL,
-	
+	[idSupplier] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_Tbl_PhieuNhapHang] PRIMARY KEY CLUSTERED 
 (
 	[idCoupon] ASC
@@ -299,6 +299,7 @@ CREATE TABLE [dbo].[Tbl_SanPham](
 	[statusProduct] [nvarchar](max) NULL,
 	[idTypeProduct] [int] NOT NULL,
 	[idManufactutre] [int] NOT NULL,
+	[image] [nvarchar] (max) NOT NULL,
  CONSTRAINT [PK_Tbl_SanPham] PRIMARY KEY CLUSTERED 
 (
 	[idProduct] ASC
@@ -415,6 +416,13 @@ REFERENCES [dbo].[Tbl_Quyen] ([idQuyen])
 GO
 ALTER TABLE [dbo].[Tbl_TaiKhoan] CHECK CONSTRAINT [fk_QuyenID]
 GO
+
+ALTER TABLE [dbo].[Tbl_PhieuYeuCauNhapHang]  WITH CHECK ADD  CONSTRAINT [fk_NhapHang] FOREIGN KEY([idSupplier])
+REFERENCES [dbo].[Tbl_NhaCungCap] ([idSupplier])
+GO
+ALTER TABLE [dbo].[Tbl_PhieuYeuCauNhapHang] CHECK CONSTRAINT [fk_NhapHang]
+GO
+
 /****** Object:  StoredProcedure [dbo].[proc_login]    Script Date: 9/16/2022 11:13:22 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -458,56 +466,56 @@ INSERT INTO Tbl_DanhMucLapTop VALUES
 
 ---	  4) Sản phẩm   ----
 INSERT INTO Tbl_SanPham VALUES
-('SP001', N'Tuf Gaming F15 2022', 21000000,  16, N'Còn hàng', 5001, 4001),
-('SP002', N'Laptop Acer Swift 3', 22000000,  5, N'Còn hàng', 5002, 4002),
-('SP003', N'Laptop Dell Precision 5510', 23000000,  5, N'Còn hàng', 5003, 4004),
-('SP004', N'Tuf Gaming A15 2022', 24000000,  5, N'Còn hàng', 5001, 4001),
-('SP005', N'Macbook Pro M2', 25000000,  5, N'Còn hàng', 5002, 4003),
-('SP006', N'Laptop Asus TUF Gaming F15', 27899000,  5, N'Còn hàng', 5001, 4001),
-('SP007', N'Laptop Asus ROG Flow X13', 33990000,  5, N'Còn hàng', 5001, 4001),
-('SP008', N'Laptop ASUS ROG Strix SCAR 17 SE G733CX-LL6789W', 102900000 ,  5, N'Còn hàng', 5001, 4001),
-('SP009', N'Laptop Acer Gaming Aspire 7 A715-42G-R4XX NH.QAYSV.008', 14690000,  5, N'Còn hàng', 5001, 4002),
-('SP010', N'Laptop Gaming Acer Nitro 5 Eagle AN515-57-54MV NH.QENSV.003', 19990000,  5, N'Còn hàng', 5001, 4002),
-('SP011', N'Laptop Acer Predator Helios 300 PH315-55-76KG NH.QGPSV.001', 40990000,  5, N'Còn hàng', 5001, 4002),
-('SP012', N'Laptop Asus ROG Zephyrus M16 GU603ZX-K8025W', 94990000,  5, N'Còn hàng', 5001, 4001),
-('SP013', N'Laptop ASUS ROG Zephyrus G15 GA503RM-LN006W', 40690000,  5, N'Còn hàng', 5001, 4001),
-('SP014', N'Laptop Asus ROG Strix G15 G513RC-HN090W', 25990000,  5, N'Còn hàng', 5001, 4001),
-('SP015', N'Laptop Dell G15 5511 70283449', 22590000,  5, N'Còn hàng', 5001, 4004),
-('SP016', N'Laptop Dell G15 5515C P105F004CGR', 18590000,  5, N'Còn hàng', 5001, 4004),
-('SP017', N'Laptop Dell G15 5515D P105F004DGR', 20690000,  5, N'Còn hàng', 5001, 4004),
-('SP018', N'Laptop Lenovo IdeaPad Gaming 3 15IAH7 82S9006YVN', 26190000,  5, N'Còn hàng', 5001, 4005),
-('SP019', N'Laptop Lenovo Legion 5 15IAH7H 82RB0048VN', 38990000,  5, N'Còn hàng', 5001, 4005),
-('SP020', N'Laptop Lenovo Legion 5 Pro 16IAH7H 82RG008SVN', 43990000,  5, N'Còn hàng', 5001, 4005),
-('SP021', N'Laptop Asus ZenBook 14 UX425EA-KI839W', 18990000,  5, N'Còn hàng', 5002, 4001),
-('SP022', N'Laptop Asus ExpertBook B9400CEA-KC0773T', 29990000,  5, N'Còn hàng', 5002, 4001),
-('SP023', N'Laptop Asus Zenbook 14 Flip OLED UP5401ZA-KN101W', 31690000,  5, N'Còn hàng', 5002, 4001),
-('SP024', N'Laptop Acer Aspire 3 A315-56-58EG NX.HS5SV.00J', 10999000,  5, N'Còn hàng', 5002, 4002),
-('SP025', N'Laptop Acer Aspire 5 A514-55-5954 NX.K5BSV.001', 16990000,  5, N'Còn hàng', 5002, 4002),
-('SP026', N'Laptop Acer Swift 3 SF314-512-56QN NX.K0FSV.002', 22990000,  5, N'Còn hàng', 5002, 4002),
-('SP027', N'Laptop Apple MacBook Pro M2 2022 13.3 inch MNEH3SA/A Space Grey', 29990000,  5, N'Còn hàng', 5002, 4003),
-('SP028', N'Laptop Apple Macbook Air 13.6 inch MLY13SA/A STARLIGHT (Apple M2)', 29550000,  5, N'Còn hàng', 5002, 4003),
-('SP029', N'Laptop Apple Macbook Air 13.6 inch MLXW3SA/A Xám (Apple M2)', 29550000,  5, N'Còn hàng', 5002, 4003),
-('SP030', N'Laptop Dell Vostro 14 3400 YX51W6', 16790000,  5, N'Còn hàng', 5002, 4004),
-('SP031', N'Laptop Dell Inspiron 16 5620 P1WKN', 20790000,  5, N'Còn hàng', 5002, 4004),
-('SP032', N'Laptop Dell Inspiron 14 7420 1YT85', 32290000,  5, N'Còn hàng', 5002, 4004),
-('SP033', N'Laptop Lenovo ThinkPad X13 Gen 3 21BN00AJVA', 30890000,  5, N'Còn hàng', 5002, 4005),
-('SP034', N'Laptop Lenovo IdeaPad 5 15IAL7 82SF006LVN', 18390000,  5, N'Còn hàng', 5002, 4005),
-('SP035', N'Laptop Lenovo ThinkBook 14 G2 ITL 20VD00Y0VN', 14990000,  5, N'Còn hàng', 5002, 4005),
-('SP036', N'Laptop Asus ZenBook 14 UX425EA-KI839W', 18999000,  5, N'Còn hàng', 5003, 4001),
-('SP037', N'Laptop Asus ExpertBook B9400CEA-KC0773T', 29990000,  5, N'Còn hàng', 5003, 4001),
-('SP038', N'Laptop Asus Vivobook 14X A1403ZA-LY072W', 14490000,  5, N'Còn hàng', 5003, 4001),
-('SP039', N'Laptop Acer Gaming Aspire 7 A715-42G-R4XX NH.QAYSV.008', 14690000,  5, N'Còn hàng', 5003, 4002),
-('SP040', N'Laptop Acer Aspire 3 A315-56-58EG NX.HS5SV.00J', 10999000,  5, N'Còn hàng', 5003, 4002),
-('SP041', N'Laptop Acer Swift 3 SF314-43-R4X3 NX.AB1SV.004', 18690000,  5, N'Còn hàng', 5003, 4002),
-('SP042', N'Laptop Acer Aspire 3 A315-58G-50S4 NX.ADUSV.001', 14690000,  5, N'Còn hàng', 5003, 4002),
-('SP043', N'Laptop Acer Aspire 3 A315-56-38B1 NX.HS5SV.00G', 9290000,  5, N'Còn hàng', 5003, 4002),
-('SP044', N'Laptop Acer Aspire 5 A515-57-52Y2 NX.K3KSV.003', 16990000,  5, N'Còn hàng', 5003, 4002),
-('SP045', N'Laptop Dell Latitude 3420 42LT342001', 10990000,  5, N'Còn hàng', 5003, 4004),
-('SP046', N'Laptop Dell Vostro 14 3400 YX51W5', 16790000,  5, N'Còn hàng', 5003, 4004),
-('SP047', N'Laptop Dell Vostro 3400 V4I7015W1', 22390000,  5, N'Còn hàng', 5003, 4004),
-('SP048', N'Laptop Lenovo V14 G2 ITL 82KA00RTVN', 8990000,  5, N'Còn hàng', 5003, 4005),
-('SP049', N'Laptop Lenovo ThinkBook 14 G2 ITL 20VD00Y0VN', 14990000,  5, N'Còn hàng', 5003, 4005),
-('SP050', N'Laptop Lenovo ThinkBook 14 G2 ITL 20VD00Y3VN', 17690000,  5, N'Còn hàng', 5003, 4005)
+('SP001', N'Tuf Gaming F15 2022', 21000000,  16, N'Còn hàng', 5001, 4001, ''),
+('SP002', N'Laptop Acer Swift 3', 22000000,  5, N'Còn hàng', 5002, 4002, ''),
+('SP003', N'Laptop Dell Precision 5510', 23000000,  5, N'Còn hàng', 5003, 4004, ''),
+('SP004', N'Tuf Gaming A15 2022', 24000000,  5, N'Còn hàng', 5001, 4001, ''),
+('SP005', N'Macbook Pro M2', 25000000,  5, N'Còn hàng', 5002, 4003, ''),
+('SP006', N'Laptop Asus TUF Gaming F15', 27899000,  5, N'Còn hàng', 5001, 4001, ''),
+('SP007', N'Laptop Asus ROG Flow X13', 33990000,  5, N'Còn hàng', 5001, 4001, ''),
+('SP008', N'Laptop ASUS ROG Strix SCAR 17 SE G733CX-LL6789W', 102900000 ,  5, N'Còn hàng', 5001, 4001, ''),
+('SP009', N'Laptop Acer Gaming Aspire 7 A715-42G-R4XX NH.QAYSV.008', 14690000,  5, N'Còn hàng', 5001, 4002, ''),
+('SP010', N'Laptop Gaming Acer Nitro 5 Eagle AN515-57-54MV NH.QENSV.003', 19990000,  5, N'Còn hàng', 5001, 4002, ''),
+('SP011', N'Laptop Acer Predator Helios 300 PH315-55-76KG NH.QGPSV.001', 40990000,  5, N'Còn hàng', 5001, 4002, ''),
+('SP012', N'Laptop Asus ROG Zephyrus M16 GU603ZX-K8025W', 94990000,  5, N'Còn hàng', 5001, 4001, ''),
+('SP013', N'Laptop ASUS ROG Zephyrus G15 GA503RM-LN006W', 40690000,  5, N'Còn hàng', 5001, 4001, ''),
+('SP014', N'Laptop Asus ROG Strix G15 G513RC-HN090W', 25990000,  5, N'Còn hàng', 5001, 4001, ''),
+('SP015', N'Laptop Dell G15 5511 70283449', 22590000,  5, N'Còn hàng', 5001, 4004, ''),
+('SP016', N'Laptop Dell G15 5515C P105F004CGR', 18590000,  5, N'Còn hàng', 5001, 4004, ''),
+('SP017', N'Laptop Dell G15 5515D P105F004DGR', 20690000,  5, N'Còn hàng', 5001, 4004, ''),
+('SP018', N'Laptop Lenovo IdeaPad Gaming 3 15IAH7 82S9006YVN', 26190000,  5, N'Còn hàng', 5001, 4005, ''),
+('SP019', N'Laptop Lenovo Legion 5 15IAH7H 82RB0048VN', 38990000,  5, N'Còn hàng', 5001, 4005, ''),
+('SP020', N'Laptop Lenovo Legion 5 Pro 16IAH7H 82RG008SVN', 43990000,  5, N'Còn hàng', 5001, 4005, ''),
+('SP021', N'Laptop Asus ZenBook 14 UX425EA-KI839W', 18990000,  5, N'Còn hàng', 5002, 4001, ''),
+('SP022', N'Laptop Asus ExpertBook B9400CEA-KC0773T', 29990000,  5, N'Còn hàng', 5002, 4001, ''),
+('SP023', N'Laptop Asus Zenbook 14 Flip OLED UP5401ZA-KN101W', 31690000,  5, N'Còn hàng', 5002, 4001, ''),
+('SP024', N'Laptop Acer Aspire 3 A315-56-58EG NX.HS5SV.00J', 10999000,  5, N'Còn hàng', 5002, 4002, ''),
+('SP025', N'Laptop Acer Aspire 5 A514-55-5954 NX.K5BSV.001', 16990000,  5, N'Còn hàng', 5002, 4002, ''),
+('SP026', N'Laptop Acer Swift 3 SF314-512-56QN NX.K0FSV.002', 22990000,  5, N'Còn hàng', 5002, 4002, ''),
+('SP027', N'Laptop Apple MacBook Pro M2 2022 13.3 inch MNEH3SA/A Space Grey', 29990000,  5, N'Còn hàng', 5002, 4003, ''),
+('SP028', N'Laptop Apple Macbook Air 13.6 inch MLY13SA/A STARLIGHT (Apple M2)', 29550000,  5, N'Còn hàng', 5002, 4003, ''),
+('SP029', N'Laptop Apple Macbook Air 13.6 inch MLXW3SA/A Xám (Apple M2)', 29550000,  5, N'Còn hàng', 5002, 4003, ''),
+('SP030', N'Laptop Dell Vostro 14 3400 YX51W6', 16790000,  5, N'Còn hàng', 5002, 4004, ''),
+('SP031', N'Laptop Dell Inspiron 16 5620 P1WKN', 20790000,  5, N'Còn hàng', 5002, 4004, ''),
+('SP032', N'Laptop Dell Inspiron 14 7420 1YT85', 32290000,  5, N'Còn hàng', 5002, 4004, ''),
+('SP033', N'Laptop Lenovo ThinkPad X13 Gen 3 21BN00AJVA', 30890000,  5, N'Còn hàng', 5002, 4005, ''),
+('SP034', N'Laptop Lenovo IdeaPad 5 15IAL7 82SF006LVN', 18390000,  5, N'Còn hàng', 5002, 4005, ''),
+('SP035', N'Laptop Lenovo ThinkBook 14 G2 ITL 20VD00Y0VN', 14990000,  5, N'Còn hàng', 5002, 4005, ''),
+('SP036', N'Laptop Asus ZenBook 14 UX425EA-KI839W', 18999000,  5, N'Còn hàng', 5003, 4001, ''),
+('SP037', N'Laptop Asus ExpertBook B9400CEA-KC0773T', 29990000,  5, N'Còn hàng', 5003, 4001, ''),
+('SP038', N'Laptop Asus Vivobook 14X A1403ZA-LY072W', 14490000,  5, N'Còn hàng', 5003, 4001, ''),
+('SP039', N'Laptop Acer Gaming Aspire 7 A715-42G-R4XX NH.QAYSV.008', 14690000,  5, N'Còn hàng', 5003, 4002, ''),
+('SP040', N'Laptop Acer Aspire 3 A315-56-58EG NX.HS5SV.00J', 10999000,  5, N'Còn hàng', 5003, 4002, ''),
+('SP041', N'Laptop Acer Swift 3 SF314-43-R4X3 NX.AB1SV.004', 18690000,  5, N'Còn hàng', 5003, 4002, ''),
+('SP042', N'Laptop Acer Aspire 3 A315-58G-50S4 NX.ADUSV.001', 14690000,  5, N'Còn hàng', 5003, 4002, ''),
+('SP043', N'Laptop Acer Aspire 3 A315-56-38B1 NX.HS5SV.00G', 9290000,  5, N'Còn hàng', 5003, 4002, ''),
+('SP044', N'Laptop Acer Aspire 5 A515-57-52Y2 NX.K3KSV.003', 16990000,  5, N'Còn hàng', 5003, 4002, ''),
+('SP045', N'Laptop Dell Latitude 3420 42LT342001', 10990000,  5, N'Còn hàng', 5003, 4004, ''),
+('SP046', N'Laptop Dell Vostro 14 3400 YX51W5', 16790000,  5, N'Còn hàng', 5003, 4004, ''),
+('SP047', N'Laptop Dell Vostro 3400 V4I7015W1', 22390000,  5, N'Còn hàng', 5003, 4004, ''),
+('SP048', N'Laptop Lenovo V14 G2 ITL 82KA00RTVN', 8990000,  5, N'Còn hàng', 5003, 4005, ''),
+('SP049', N'Laptop Lenovo ThinkBook 14 G2 ITL 20VD00Y0VN', 14990000,  5, N'Còn hàng', 5003, 4005, ''),
+('SP050', N'Laptop Lenovo ThinkBook 14 G2 ITL 20VD00Y3VN', 17690000,  5, N'Còn hàng', 5003, 4005, '')
 
 ---   5) Khách hàng   ---
 INSERT INTO Tbl_KhachHang VALUES 
@@ -581,7 +589,7 @@ INSERT INTO Tbl_PhieuNhapKho VALUES
 
 ---   15) Phiếu yêu cầu nhập hàng   --- NO
 INSERT INTO Tbl_PhieuYeuCauNhapHang VALUES
-(6001, '2019-12-01', 100000000)
+(6001, '2019-12-01', 100000000, 'ASUS')
 
 ---   16) Chi tiết nhập kho   --- Checked
 INSERT INTO Tbl_ChiTietNhapKho VALUES
