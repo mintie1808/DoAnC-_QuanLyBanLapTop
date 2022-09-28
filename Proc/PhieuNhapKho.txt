@@ -14,7 +14,7 @@ as
 BEGIN 
 /* câu lệnh SELECT */
 INSERT INTO dbo.Tbl_PhieuNhapKho (idReceipt, idSupplier, dateReceipt,sumPay)
-VALUES (@id, @idSupplier, @dateReceipt, @sumPay)
+VALUES (@idReceipt, @idSupplier, @dateReceipt, @sumPay)
 END 
 
 go
