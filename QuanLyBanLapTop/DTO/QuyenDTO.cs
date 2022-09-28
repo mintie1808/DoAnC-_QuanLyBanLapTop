@@ -26,5 +26,6 @@ namespace DTO
             this.idQuyen = id;
             this.nameAuth = name;
         }
+
     }
 }

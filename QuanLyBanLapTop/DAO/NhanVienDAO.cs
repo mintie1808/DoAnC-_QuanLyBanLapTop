@@ -12,9 +12,6 @@ namespace DAO
 {
     public class NhanVienDao
     {
-        NhanVienDao nvDAO = new NhanVienDao();
-        NhanVien nv = new NhanVien(1, 'quan', 'cntt', '0389938946', 8000000, 200, 50, '1');
-        nvDAO.addNhanVien(nv);
         private Connect conn = new Connect();
 
         /**
@@ -23,7 +20,7 @@ namespace DAO
         nvDAO.addNhanVien(nv);
         **/
         // thêm 1 quyền
-        public void addNhanVien(NhanVienDTO nv)
+        public void addNhanVien(NhanVien nv)
         {
             //kết nối với connect
             conn.Conn.Open();
@@ -33,14 +30,14 @@ namespace DAO
             //proc lát mình tạo trong sqlServer
             //đặt tên biến 
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@idEmployee", nv.idEmployee);
-            command.Parameters.AddWithValue("@nameEmployee", nv.nameEmployee);
-            command.Parameters.AddWithValue("@serviceEmployee", nv.serviceEmployee);
-            command.Parameters.AddWithValue("@phoneNumber", nv.phoneNumber);
-            command.Parameters.AddWithValue("@salaryEmployee", nv.salaryEmployee);
-            command.Parameters.AddWithValue("@totalSales", nv.totalSales);
-            command.Parameters.AddWithValue("@quantityBillPay", nv.quantityBillPay);
-            command.Parameters.AddWithValue("@idUser", nv.idUser);
+            command.Parameters.AddWithValue("@idEmployee", nv.IdEmployee);
+            command.Parameters.AddWithValue("@nameEmployee", nv.NameEmployee);
+            command.Parameters.AddWithValue("@serviceEmployee", nv.ServiceEmployee);
+            command.Parameters.AddWithValue("@phoneNumber", nv.PhoneNumber);
+            command.Parameters.AddWithValue("@salaryEmployee", nv.SalaryEmployee);
+            command.Parameters.AddWithValue("@totalSales", nv.TotalSales);
+            command.Parameters.AddWithValue("@quantityBillPay", nv.QuantityBillPay);
+            command.Parameters.AddWithValue("@idUser", nv.IdUser);
             command.Connection = conn.Conn;
             // tạo biến reader 
             command.ExecuteReader();
@@ -49,24 +46,24 @@ namespace DAO
             // xong giờ qua tạo biến proc là ok;
         }
 
-        public void updateNhanVien(NhanVienDTO nv)
+        public void updateNhanVien(NhanVien nv)
         {
             //kết nối với connect
             conn.Conn.Open();
 
             //tạo lớp kết nối sqlCommand
-            SqlCommand command = new SqlCommand("Proc_updateQuyen", conn.Conn);
+            SqlCommand command = new SqlCommand("Proc_updateEmployee", conn.Conn);
             //proc lát mình tạo trong sqlServer
             //đặt tên biến 
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@idEmployee", nv.idEmployee);
-            command.Parameters.AddWithValue("@nameEmployee", nv.nameEmployee);
-            command.Parameters.AddWithValue("@serviceEmployee", nv.serviceEmployee);
-            command.Parameters.AddWithValue("@phoneNumber", nv.phoneNumber);
-            command.Parameters.AddWithValue("@salaryEmployee", nv.salaryEmployee);
-            command.Parameters.AddWithValue("@totalSales", nv.totalSales);
-            command.Parameters.AddWithValue("@quantityBillPay", nv.quantityBillPay);
-            command.Parameters.AddWithValue("@idUser", nv.idUser);
+            command.Parameters.AddWithValue("@idEmployee", nv.IdEmployee);
+            command.Parameters.AddWithValue("@nameEmployee", nv.NameEmployee);
+            command.Parameters.AddWithValue("@serviceEmployee", nv.ServiceEmployee);
+            command.Parameters.AddWithValue("@phoneNumber", nv.PhoneNumber);
+            command.Parameters.AddWithValue("@salaryEmployee", nv.SalaryEmployee);
+            command.Parameters.AddWithValue("@totalSales", nv.TotalSales);
+            command.Parameters.AddWithValue("@quantityBillPay", nv.QuantityBillPay);
+            command.Parameters.AddWithValue("@idUser", nv.IdUser);
             command.Connection = conn.Conn;
             // tạo biến reader 
             command.ExecuteReader();
@@ -81,11 +78,11 @@ namespace DAO
             conn.Conn.Open();
 
             //tạo lớp kết nối sqlCommand
-            SqlCommand command = new SqlCommand("Proc_deleteQuyen", conn.Conn);
+            SqlCommand command = new SqlCommand("Proc_deleteEmployee", conn.Conn);
             //proc lát mình tạo trong sqlServer
             //đặt tên biến 
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@idEmployee", nv.idEmployee);
+            command.Parameters.AddWithValue("@idEmployee", id);
             command.Connection = conn.Conn;
             // tạo biến reader 
             command.ExecuteReader();

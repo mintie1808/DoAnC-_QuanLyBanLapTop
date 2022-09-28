@@ -7,6 +7,7 @@ insert into Tbl_Quyen(idQuyen, nameAuth)
 values (@id, @name)
 end
 
+go
 create proc [dbo].[Proc_deleteQuyen]
 @id int
 as
@@ -16,6 +17,7 @@ delete from Tbl_Quyen
 WHERE idQuyen = @id
 end
 
+go
 create proc [dbo].[Proc_updateQuyen]
 @id int,
 @name nvarchar(50)

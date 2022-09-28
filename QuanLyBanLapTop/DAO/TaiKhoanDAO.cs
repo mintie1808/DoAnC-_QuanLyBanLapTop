@@ -13,8 +13,9 @@ namespace DAO
     {
         public string searchUser(UserDTO us)
         {
+            QuyenDAO quyenDAO = new QuyenDAO();
+            quyenDAO.deleteQuyen(1);
             Connect connect = new Connect();
-
             connect.Conn.Open();
             SqlCommand sqlCommand = new SqlCommand("proc_login", connect.Conn);
             sqlCommand.CommandType = CommandType.StoredProcedure;

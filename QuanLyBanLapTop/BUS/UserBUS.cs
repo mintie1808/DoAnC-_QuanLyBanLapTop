@@ -15,7 +15,6 @@ namespace BUS
         private Connect connect = new Connect();
         public string login(string userName, string pass)
         {
-            string info = null;
             if (userName == "")
                 return "requeid_user";
             if (pass == "")
